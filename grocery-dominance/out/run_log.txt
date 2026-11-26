@@ -1,0 +1,137 @@
+[release] 2026-11-18.0
+[places] 100,177 candidate places (95,184 in grocery categories)
+
+[audit] biggest branded-but-unmatched (each is its own parent):
+                                    parent  records
+                                  Foodtown      108
+                             Lowe's Market       93
+                        Bravo Supermarkets       84
+                          Superior Grocers       60
+                                Food Depot       59
+                     Vallarta Supermarkets       46
+                Redner's Warehouse Markets       40
+                                  Rosauers       39
+                         Ideal Food Basket       38
+                             Midwest Fresh       36
+                            MyCountyMarket       34
+                     Sedano's Supermarkets       34
+                              Price Cutter       33
+Town & Country Super Market / Country Mart       32
+                          Ray's Food Place       32
+                                    Marc's       31
+                Northgate Gonzalez Markets       31
+                               King Kullen       30
+                         Dierbergs Markets       26
+                           Homeland Stores       26
+                   Food Bazaar Supermarket       24
+                          Strack & Van Til       24
+                            Patel Brothers       23
+                    Associated Supermarket       23
+                               Star Market       23
+                      Shoppers Value Foods       21
+                                 Food King       21
+                            Central Market       21
+                                The Market       21
+                            Met Foodmarket       20
+[audit] 100,177 records -> 84,768 after exclusions -> 82,649 after de-dupe
+[audit] rule-matched 44.0% of records; independents 62.3% of stores
+
+[sqft] footprint match rate: 59.7% any building, 51.8% reliable (4,000-320,000 sqft)
+                      stores  reliable  median_sqft
+parent                                             
+Independent            51479      0.40     14404.17
+Walmart                 4023      0.76    159538.74
+Aldi                    3260      0.56     20080.43
+Kroger                  2462      0.88     67066.31
+Albertsons              2279      0.91     56089.91
+Ahold Delhaize          2232      0.84     52182.69
+Publix                  1486      0.83     56931.33
+Save A Lot              1010      0.42     30178.62
+IGA                     1000      0.57     21916.85
+Piggly Wiggly            690      0.63     31416.60
+Southeastern Grocers     480      0.78     56987.07
+Wakefern                 427      0.73     71814.44
+Chedraui USA             410      0.80     39033.40
+H-E-B                    402      0.80     81819.62
+Northeast Grocery        281      0.69     58751.37
+Sprouts                  278      0.69     38275.76
+Key Food                 258      0.80     20804.65
+Giant Eagle              258      0.76     69931.56
+Hy-Vee                   254      0.87     68825.14
+Amazon                   248      0.73     45812.11
+
+[revenue] implied sales per sqft (flag outside $300-900):
+                            stores         sqft  revenue_bn  coverage_adj  implied_per_sqft  avg_store_sqft  rev_per_store_m   flag
+parent                                                                                                                             
+Walmart                       4023  603610924.6       285.5           1.0             473.0        150040.0             71.0       
+Kroger                        2462  187116593.7       134.1           1.0             716.5         76001.9             54.5       
+Albertsons                    2279  136409098.6        79.4           1.0             581.9         59854.8             34.8       
+Publix                        1486  100976467.9        62.7           1.0             620.9         67951.9             42.2       
+Ahold Delhaize                2232  135403871.9        60.0           1.0             443.1         60664.8             26.9       
+H-E-B                          402   33538678.1        44.2           1.0            1316.7         83429.5            109.9  CHECK
+Aldi                          3260  106232015.0        42.4           1.0             398.7         32586.5             13.0       
+Meijer                         237   43581269.6        22.8           1.0             523.6        183887.2             96.3       
+Wakefern                       427   34122344.6        21.5           1.0             630.1         79911.8             50.4       
+Hy-Vee                         254   16906196.1        14.2           1.0             839.3         66559.8             55.9       
+Wegmans                        120   13333556.4        13.4           1.0            1002.0        111113.0            111.3  CHECK
+WinCo                          148   13988567.3        10.6           1.0             761.3         94517.3             72.0       
+Amazon                         248   13163545.7        10.6           0.5             801.9         53078.8             42.6       
+Giant Eagle                    258   18732005.8         9.0           1.0             480.5         72604.7             34.9       
+Sprouts                        278   13980509.9         8.8           1.0             630.2         50289.6             31.7       
+Chedraui USA                   410   20105340.7         8.1           1.0             400.9         49037.4             19.7       
+Northeast Grocery              281   17160463.0         8.0           1.0             463.9         61069.3             28.3       
+Southeastern Grocers           480   32027804.7         6.9           1.0             216.7         66724.6             14.5  CHECK
+Raley's                         98    6902412.9         5.6           1.0             815.7         70432.8             57.4       
+Market Basket (DeMoulas)       102    9926134.2         5.5           1.0             558.1         97315.0             54.3       
+Ingles                         195   13764633.6         5.4           1.0             393.8         70587.9             27.8       
+Weis Markets                   217   13776686.3         5.0           1.0             360.0         63487.0             22.9       
+Trader Joe's                   191    8499668.5         4.8           0.3             566.2         44500.9             25.2       
+Stater Bros                    175    9178134.5         4.8           1.0             524.1         52446.5             27.5       
+Grocery Outlet                 189    6270517.0         4.7           1.0             747.9         33177.3             24.8       
+Save Mart                      190   12359613.7         4.6           1.0             372.2         65050.6             24.2       
+Schnucks                       102    6985778.0         4.1           1.0             586.9         68488.0             40.2       
+Save A Lot                    1010   38434793.5         4.1           1.0             105.6         38054.3              4.0  CHECK
+Brookshire Grocery             201    8850362.8         3.8           1.0             429.4         44031.7             18.9       
+C&S Wholesale Grocers          191   10246311.1         2.8           1.0             277.2         53645.6             14.9  CHECK
+Key Food                       258    7328998.5         2.8           1.0             383.4         28407.0             10.9       
+Big Y                           85    7424824.0         2.7           1.0             363.6         87350.9             31.8       
+K-VA-T (Food City)             164    8723959.3         2.4           1.0             280.8         53194.9             14.9  CHECK
+UNFI                            70    5764947.0         2.2           1.0             374.2         82356.4             30.8       
+Woodman's                       18    4138537.2         1.8           1.0             447.0        229918.7            102.8       
+Fareway                        165    4618522.9         1.6           1.0             346.4         27991.0              9.7       
+Northgate Gonzalez Markets      31    1595727.4         1.6           1.0            1002.7         51475.1             51.6  CHECK
+Harps                          140    4665796.0         1.6           1.0             334.3         33327.1             11.1       
+Lowes Foods (Alex Lee)         111    6595315.8         1.5           1.0             227.4         59417.3             13.5  CHECK
+Natural Grocers                 73    2022383.0         1.4           1.0             672.5         27703.9             18.6       
+Brookshire Brothers            109    3553726.2         1.3           1.0             365.8         32603.0             11.9       
+Sedano's Supermarkets           34    2182070.6         1.2           1.0             549.9         64178.5             35.3       
+Vallarta Supermarkets           46    2720549.2         1.2           1.0             430.1         59142.4             25.4       
+Festival Foods                  56    3761428.0         1.1           1.0             297.8         67168.4             20.0  CHECK
+
+[note] if all independents were one bloc they would win 99% of hexes by count
+
+[hexes won]
+                   By store count  By square footage  By est. revenue  count→revenue
+winner                                                                              
+Walmart                       572               1897             1673           1101
+Albertsons                    503                311              379           -124
+Other chains                  766                448              349           -417
+Kroger                        232                125              284             52
+Ahold Delhaize                295                167              149           -146
+H-E-B                          76                 52              124             48
+Hy-Vee                         67                 42              113             46
+Independent                    92                165              112             20
+Publix                        116                 63               93            -23
+Meijer                          3                 54               58             55
+IGA                           173                 32               31           -142
+Northeast Grocery              53                 28               21            -32
+Piggly Wiggly                 140                 11               11           -129
+Aldi                          208                  5               11           -197
+Fareway                        54                  2                0            -54
+Save A Lot                     58                  6                0            -58
+
+[flips] 46.7% of hexes change winner from count to revenue
+gained: {'Walmart': 1125, 'Kroger': 112, 'Other chains': 111, 'Hy-Vee': 58, 'Meijer': 55, 'H-E-B': 48, 'Albertsons': 45, 'Independent': 20}
+lost: {'Other chains': 528, 'Aldi': 202, 'Albertsons': 169, 'Ahold Delhaize': 149, 'IGA': 144, 'Piggly Wiggly': 129, 'Kroger': 60, 'Save A Lot': 58}
+
+[replication] top store names: {'Safeway': 304, 'Food Lion': 213, 'Kroger': 188, 'Publix': 154, 'Albertsons': 127, 'IGA': 123, 'H-E-B': 112, 'Hy-Vee': 111, "Brookshire's": 70, 'ALDI': 68}

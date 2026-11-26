@@ -1,0 +1,1298 @@
+parent,banner,kind,records,stores_after_dedupe
+Independent,Independent,independent,51479,51479.0
+EXCLUDE,manufacturer / corporate site,excluded,6147,0.0
+EXCLUDE,department / duplicate record,excluded,4727,0.0
+Walmart,Supercenter / Walmart,rule,3644,3304.0
+Aldi,Aldi,rule,3330,3260.0
+EXCLUDE,convenience,excluded,1687,0.0
+Publix,Publix,rule,1595,1486.0
+Ahold Delhaize,Food Lion,rule,1419,1216.0
+EXCLUDE,warehouse club / foodservice,excluded,1412,0.0
+Kroger,Kroger,rule,1163,1128.0
+IGA,IGA,rule,1099,1000.0
+Save A Lot,Save A Lot,rule,1020,1010.0
+EXCLUDE,non-grocery,excluded,956,0.0
+Albertsons,Safeway,rule,951,925.0
+Walmart,Neighborhood Market,rule,742,719.0
+Piggly Wiggly,Piggly Wiggly,rule,718,690.0
+H-E-B,H-E-B,rule,589,376.0
+Ahold Delhaize,Stop & Shop,rule,488,462.0
+Albertsons,Albertsons,rule,462,441.0
+Southeastern Grocers,Winn-Dixie,rule,438,419.0
+Wakefern,ShopRite,rule,375,335.0
+Chedraui USA,Smart & Final,rule,302,290.0
+Kroger,Harris Teeter,rule,291,274.0
+Key Food,Key Food,rule,286,258.0
+Sprouts,Sprouts,rule,281,278.0
+Giant Eagle,Giant Eagle,rule,269,247.0
+Hy-Vee,Hy-Vee,rule,265,254.0
+Amazon,Whole Foods,rule,254,242.0
+Meijer,Meijer,rule,247,237.0
+The Fresh Market,The Fresh Market,rule,235,231.0
+Brookshire Grocery,Brookshire's,rule,229,134.0
+Weis Markets,Weis,rule,223,217.0
+Ahold Delhaize,Hannaford,rule,214,209.0
+C-Town,C-Town,rule,211,182.0
+Albertsons,Vons,rule,205,195.0
+Ingles,Ingles,rule,200,195.0
+Kroger,Ralphs,rule,200,194.0
+Trader Joe's,Trader Joe's,rule,200,191.0
+EXCLUDE,defunct banner,excluded,194,0.0
+Grocery Outlet,Grocery Outlet,rule,191,189.0
+Albertsons,Jewel-Osco,rule,187,184.0
+Kroger,Food 4 Less,rule,186,178.0
+EXCLUDE,pharmacy,excluded,182,0.0
+Stater Bros,Stater Bros,rule,177,175.0
+K-VA-T (Food City),Food City,rule,175,164.0
+Ahold Delhaize,Giant Food,rule,175,168.0
+Lidl,Lidl,rule,174,172.0
+Fareway,Fareway,rule,168,165.0
+C&S Wholesale Grocers,Family Fare,rule,162,137.0
+Northeast Grocery,Tops,rule,160,156.0
+Albertsons,Acme,rule,156,151.0
+Ahold Delhaize,The Giant Company,rule,156,148.0
+WinCo,WinCo,rule,151,148.0
+Albertsons,Shaw's,rule,150,136.0
+Harps,Harps,rule,149,140.0
+Market Basket (DeMoulas),Market Basket,rule,125,102.0
+Wegmans,Wegmans,rule,123,120.0
+Northeast Grocery,Price Chopper,rule,117,102.0
+Kroger,Fry's,rule,114,94.0
+Lowes Foods (Alex Lee),Lowes Foods,rule,113,111.0
+Brookshire Brothers,Brookshire Brothers,rule,113,109.0
+Chedraui USA,Fiesta Mart,rule,110,66.0
+Foodtown,Foodtown,branded-unmatched,108,106.0
+Kroger,Pick 'n Save,rule,107,100.0
+Kroger,King Soopers,rule,106,101.0
+Schnucks,Schnucks,rule,106,102.0
+EXCLUDE,dollar store,excluded,104,0.0
+Raley's,Raley's,rule,103,98.0
+Kroger,QFC,rule,102,66.0
+Save Mart,Save Mart,rule,98,92.0
+Kroger,Smith's,rule,96,90.0
+Lowe's Market,Lowe's Market,branded-unmatched,93,92.0
+H Mart,H Mart,rule,92,89.0
+Big Y,Big Y,rule,87,85.0
+Bashas',Bashas',rule,85,79.0
+Bravo Supermarkets,Bravo Supermarkets,branded-unmatched,84,84.0
+Kroger,Fred Meyer,rule,80,75.0
+Rouses,Rouses,rule,78,77.0
+Food Giant,Food Giant,rule,74,74.0
+Natural Grocers,Natural Grocers,rule,73,73.0
+Albertsons,Tom Thumb,rule,73,70.0
+Albertsons,United Supermarkets,rule,72,54.0
+Festival Foods,Festival Foods,rule,71,56.0
+99 Ranch Market,99 Ranch Market,rule,71,60.0
+UNFI,Cub,rule,70,70.0
+Shop 'n Save (PA/WV),Shop 'n Save,rule,70,68.0
+Fine Fare,Fine Fare,rule,70,68.0
+Southeastern Grocers,Harveys,rule,68,61.0
+Chedraui USA,El Super,rule,66,54.0
+Heritage Grocers,Cardenas,rule,65,65.0
+Wakefern,Price Rite,rule,62,58.0
+Superior Grocers,Superior Grocers,branded-unmatched,60,60.0
+Price Chopper (KC),Price Chopper,rule,59,58.0
+Food Depot,Food Depot,branded-unmatched,59,57.0
+Bashas',Food City (AZ),rule,58,54.0
+Save Mart,Lucky,rule,58,54.0
+Brookshire Grocery,Spring Market,rule,55,42.0
+Save Mart,FoodMaxx,rule,49,44.0
+Vallarta Supermarkets,Vallarta Supermarkets,branded-unmatched,46,46.0
+Miner's Inc.,Super One Foods,rule,41,40.0
+Redner's Warehouse Markets,Redner's Warehouse Markets,branded-unmatched,40,39.0
+Presidente,Presidente,rule,40,39.0
+Rosauers,Rosauers,branded-unmatched,39,25.0
+Ideal Food Basket,Ideal Food Basket,branded-unmatched,38,36.0
+Kroger,Dillons,rule,38,37.0
+Seafood City,Seafood City,rule,37,34.0
+Midwest Fresh,Midwest Fresh,branded-unmatched,36,35.0
+Heritage Grocers,El Rancho,rule,36,36.0
+Kroger,Mariano's,rule,34,32.0
+MyCountyMarket,MyCountyMarket,branded-unmatched,34,34.0
+Sedano's Supermarkets,Sedano's Supermarkets,branded-unmatched,34,34.0
+Albertsons,Pavilions,rule,33,31.0
+Price Cutter,Price Cutter,branded-unmatched,33,33.0
+Town & Country Super Market / Country Mart,Town & Country Super Market / Country Mart,branded-unmatched,32,32.0
+Ray's Food Place,Ray's Food Place,branded-unmatched,32,32.0
+Marc's,Marc's,branded-unmatched,31,31.0
+Northgate Gonzalez Markets,Northgate Gonzalez Markets,branded-unmatched,31,31.0
+King Kullen,King Kullen,branded-unmatched,30,28.0
+Giant Eagle,Market District,rule,30,11.0
+Ahold Delhaize,Martin's,rule,29,29.0
+Albertsons,Randalls,rule,29,29.0
+Kroger,City Market,rule,29,28.0
+Ridley's,Ridley's,rule,28,27.0
+Northeast Grocery,Market 32,rule,28,23.0
+Dierbergs Markets,Dierbergs Markets,branded-unmatched,26,26.0
+Albertsons,Star Market,rule,26,20.0
+Homeland Stores,Homeland Stores,branded-unmatched,26,26.0
+Albertsons,Haggen,rule,24,17.0
+Food Bazaar Supermarket,Food Bazaar Supermarket,branded-unmatched,24,22.0
+Strack & Van Til,Strack & Van Til,branded-unmatched,24,23.0
+C&S Wholesale Grocers,Martin's Super Markets,rule,23,23.0
+Patel Brothers,Patel Brothers,branded-unmatched,23,23.0
+Associated Supermarket,Associated Supermarket,branded-unmatched,23,22.0
+Star Market,Star Market,branded-unmatched,23,23.0
+Wakefern,The Fresh Grocer,rule,23,22.0
+Albertsons,Market Street,rule,23,17.0
+Gelson's,Gelson's,rule,22,22.0
+Brookshire Grocery,Reasor's,rule,22,22.0
+Kroger,Jay C,rule,22,19.0
+Shoppers Value Foods,Shoppers Value Foods,branded-unmatched,21,21.0
+Food King,Food King,branded-unmatched,21,21.0
+Woodman's,Woodman's,rule,21,18.0
+Central Market,Central Market,branded-unmatched,21,21.0
+The Market,The Market,branded-unmatched,21,21.0
+Met Foodmarket,Met Foodmarket,branded-unmatched,20,20.0
+Greer's Markets,Greer's Markets,branded-unmatched,20,18.0
+Fresh Thyme,Fresh Thyme,rule,20,20.0
+Market Basket (LA/TX),Market Basket,rule,20,20.0
+Kroger,Metro Market,rule,20,16.0
+Mac's Fresh Market,Mac's Fresh Market,branded-unmatched,20,20.0
+Western Beef Supermarket,Western Beef Supermarket,branded-unmatched,20,20.0
+Berkot's Super Foods,Berkot's Super Foods,branded-unmatched,19,17.0
+Compare Foods,Compare Foods,branded-unmatched,19,19.0
+KJ's Market,KJ's Market,branded-unmatched,19,19.0
+Supervalu,Supervalu,branded-unmatched,19,18.0
+Boyer's Food Markets,Boyer's Food Markets,branded-unmatched,18,18.0
+Dollar Fresh Market,Dollar Fresh Market,branded-unmatched,18,17.0
+Harding's Friendly Market Galesburg,Harding's Friendly Market Galesburg,branded-unmatched,18,18.0
+Cash Saver,Cash Saver,branded-unmatched,17,17.0
+MOM's Organic Market,MOM's Organic Market,branded-unmatched,17,17.0
+America's Food Basket,America's Food Basket,branded-unmatched,17,17.0
+Heritage Grocers,Tony's Fresh Market,rule,17,13.0
+Foodland,Foodland,branded-unmatched,17,16.0
+Roche Bros. Supermarkets,Roche Bros. Supermarkets,branded-unmatched,16,16.0
+H-E-B,Central Market,rule,16,13.0
+Kings Food Markets,Kings Food Markets,branded-unmatched,16,16.0
+La Azteca Meat Market,La Azteca Meat Market,branded-unmatched,16,16.0
+DG Market,DG Market,branded-unmatched,15,15.0
+Holiday Market,Holiday Market,branded-unmatched,15,15.0
+Base Culture,Base Culture,branded-unmatched,15,15.0
+Marketplace Foods,Marketplace Foods,branded-unmatched,15,13.0
+Cash Wise,Cash Wise,branded-unmatched,15,15.0
+Lunds & Byerlys,Lunds & Byerlys,branded-unmatched,15,15.0
+City Market,City Market,branded-unmatched,15,15.0
+Ramey's Marketplace,Ramey's Marketplace,branded-unmatched,15,15.0
+Sunshine Foods Sioux Falls,Sunshine Foods Sioux Falls,branded-unmatched,15,15.0
+Lunds & Byerlys Apple Valley,Lunds & Byerlys Apple Valley,branded-unmatched,15,13.0
+Rebel Creamery,Rebel Creamery,branded-unmatched,14,14.0
+Chavez Supermarket,Chavez Supermarket,branded-unmatched,14,13.0
+Morton Williams Wines and Spirits,Morton Williams Wines and Spirits,branded-unmatched,14,14.0
+Country Store,Country Store,branded-unmatched,14,13.0
+Lotte Plaza Market,Lotte Plaza Market,branded-unmatched,14,14.0
+Lucky Brothers Market & Asian Foods,Lucky Brothers Market & Asian Foods,branded-unmatched,14,14.0
+United Supermarkets,United Supermarkets,branded-unmatched,14,14.0
+Village Market,Village Market,branded-unmatched,13,13.0
+Pioneer Supermarkets,Pioneer Supermarkets,branded-unmatched,13,12.0
+Pete's Fresh Glen Ellyn,Pete's Fresh Glen Ellyn,branded-unmatched,13,13.0
+Wild Fork Foods,Wild Fork Foods,branded-unmatched,13,13.0
+Brothers Market Grundy Center,Brothers Market Grundy Center,branded-unmatched,13,13.0
+Miller's Fresh Foods,Miller's Fresh Foods,branded-unmatched,13,9.0
+Co-op,Co-op,branded-unmatched,13,13.0
+Pioneer Supermarket,Pioneer Supermarket,branded-unmatched,13,13.0
+Bravo,Bravo,branded-unmatched,13,13.0
+Fresco y Más,Fresco y Más,branded-unmatched,12,12.0
+Harmons Grocery Stores,Harmons Grocery Stores,branded-unmatched,12,12.0
+"Chief Super Market, Inc.","Chief Super Market, Inc.",branded-unmatched,12,12.0
+Kirby Foods,Kirby Foods,branded-unmatched,12,12.0
+India Bazaar,India Bazaar,branded-unmatched,12,12.0
+C&S Wholesale Grocers,Grand Union,rule,12,12.0
+Wakefern,Fairway,rule,12,12.0
+La Mexicana,La Mexicana,branded-unmatched,12,12.0
+Kroger,Ruler Foods,rule,12,11.0
+Heinen's,Heinen's,branded-unmatched,12,12.0
+Food Town,Food Town,branded-unmatched,12,12.0
+C&S Wholesale Grocers,D&W Fresh Market,rule,12,12.0
+Corner Market,Corner Market,branded-unmatched,12,11.0
+Gristedes Supermarkets,Gristedes Supermarkets,branded-unmatched,12,11.0
+Sullivans Foods,Sullivans Foods,branded-unmatched,12,12.0
+Megamart Supermarket,Megamart Supermarket,branded-unmatched,11,10.0
+Woods Supermarket,Woods Supermarket,branded-unmatched,11,11.0
+DTLR,DTLR,branded-unmatched,11,11.0
+Arlan's Market,Arlan's Market,branded-unmatched,11,11.0
+Sellers Grocery,Sellers Grocery,branded-unmatched,11,11.0
+Supermercados Teloloapan Texas,Supermercados Teloloapan Texas,branded-unmatched,11,11.0
+Rancho Markets,Rancho Markets,branded-unmatched,11,11.0
+Dave's Supermarket,Dave's Supermarket,branded-unmatched,11,11.0
+Apna Bazar,Apna Bazar,branded-unmatched,11,11.0
+City Fresh Market Knickerbocker,City Fresh Market Knickerbocker,branded-unmatched,10,9.0
+Regency Centers,Regency Centers,branded-unmatched,10,10.0
+Yoke's Fresh Market,Yoke's Fresh Market,branded-unmatched,10,9.0
+McKay's Markets,McKay's Markets,branded-unmatched,10,10.0
+Buehler's Careers,Buehler's Careers,branded-unmatched,10,10.0
+TTI Club,TTI Club,branded-unmatched,10,10.0
+Trade Fair Supermarkets,Trade Fair Supermarkets,branded-unmatched,10,10.0
+Hays Supermarkets,Hays Supermarkets,branded-unmatched,10,10.0
+Snow Monkey,Snow Monkey,branded-unmatched,10,9.0
+Needler's Fresh Market,Needler's Fresh Market,branded-unmatched,10,10.0
+Kroger,Baker's,rule,10,10.0
+Food Rite Stores,Food Rite Stores,branded-unmatched,10,9.0
+State Foods Sanger,State Foods Sanger,branded-unmatched,10,10.0
+Fresh-Value Pell City,Fresh-Value Pell City,branded-unmatched,10,10.0
+Russ's Market,Russ's Market,branded-unmatched,10,10.0
+Roth's Fresh Markets,Roth's Fresh Markets,branded-unmatched,10,10.0
+Good Fortune Supermarket-San Gabriel,Good Fortune Supermarket-San Gabriel,branded-unmatched,10,9.0
+Community Markets,Community Markets,branded-unmatched,10,10.0
+Cherry Valley 2852 Webster.,Cherry Valley 2852 Webster.,branded-unmatched,10,10.0
+Maynards of Flandreau,Maynards of Flandreau,branded-unmatched,9,9.0
+hen house market,hen house market,branded-unmatched,9,9.0
+Lee's Market,Lee's Market,branded-unmatched,9,9.0
+NetCost Market,NetCost Market,branded-unmatched,9,9.0
+Nijiya Market,Nijiya Market,branded-unmatched,9,9.0
+Crest Foods of Oklahoma,Crest Foods of Oklahoma,branded-unmatched,9,9.0
+Super King Markets,Super King Markets,branded-unmatched,9,9.0
+Harvest Supermarkets,Harvest Supermarkets,branded-unmatched,9,9.0
+Seabra Foods Florida,Seabra Foods Florida,branded-unmatched,9,9.0
+Shameless Snacks,Shameless Snacks,branded-unmatched,9,9.0
+Asian Market,Asian Market,branded-unmatched,8,8.0
+Market of Choice,Market of Choice,branded-unmatched,8,8.0
+VG's Grocery,VG's Grocery,branded-unmatched,8,8.0
+Teal's Market,Teal's Market,branded-unmatched,8,8.0
+La Bonita Supermarkets,La Bonita Supermarkets,branded-unmatched,8,8.0
+Broulim's,Broulim's,branded-unmatched,8,8.0
+Kowalski's Woodbury Market,Kowalski's Woodbury Market,branded-unmatched,8,8.0
+Prenger Foods,Prenger Foods,branded-unmatched,8,8.0
+Quality Foods Inc,Quality Foods Inc,branded-unmatched,8,7.0
+Cermak Fresh Market,Cermak Fresh Market,branded-unmatched,8,8.0
+Supermercados Morelos Tul,Supermercados Morelos Tul,branded-unmatched,8,8.0
+SF Supermarket,SF Supermarket,branded-unmatched,8,8.0
+Saars Super Saver Foods,Saars Super Saver Foods,branded-unmatched,8,7.0
+SAV•MOR Foods,SAV•MOR Foods,branded-unmatched,8,8.0
+C&R Markets,C&R Markets,branded-unmatched,8,8.0
+Lee's Marketplace Stores,Lee's Marketplace Stores,branded-unmatched,8,8.0
+Miller's Montpelier,Miller's Montpelier,branded-unmatched,8,8.0
+Food Fair Market,Food Fair Market,branded-unmatched,8,8.0
+Big Saver Foods,Big Saver Foods,branded-unmatched,8,8.0
+Kuhn's Market,Kuhn's Market,branded-unmatched,8,8.0
+Blueland,Blueland,branded-unmatched,8,7.0
+Sullivan's Grocery,Sullivan's Grocery,branded-unmatched,8,8.0
+Compare Foods Winston Salem NC,Compare Foods Winston Salem NC,branded-unmatched,8,8.0
+Sendik's,Sendik's,branded-unmatched,8,8.0
+Siempre Grocery,Siempre Grocery,branded-unmatched,8,8.0
+Shaw's Supermarket,Shaw's Supermarket,branded-unmatched,8,8.0
+Acme Fresh Market,Acme Fresh Market,branded-unmatched,8,8.0
+Zion Market,Zion Market,branded-unmatched,7,7.0
+10Box Cost Plus,10Box Cost Plus,branded-unmatched,7,7.0
+Vowell's Market Place,Vowell's Market Place,branded-unmatched,7,7.0
+Fiesta SuperMarket Wasco,Fiesta SuperMarket Wasco,branded-unmatched,7,7.0
+Fairplay Foods,Fairplay Foods,branded-unmatched,7,6.0
+Renfroe's Market,Renfroe's Market,branded-unmatched,7,7.0
+Clark's Market,Clark's Market,branded-unmatched,7,7.0
+El  Ahorro,El  Ahorro,branded-unmatched,7,7.0
+Super A Foods,Super A Foods,branded-unmatched,7,7.0
+Riesbeck's,Riesbeck's,branded-unmatched,7,7.0
+Mar-Val Food Stores,Mar-Val Food Stores,branded-unmatched,7,7.0
+Town & Country Foods Billings,Town & Country Foods Billings,branded-unmatched,7,7.0
+H-E-B,Mi Tienda,rule,7,7.0
+Leevers Foods,Leevers Foods,branded-unmatched,7,7.0
+Fresh Market,Fresh Market,branded-unmatched,7,7.0
+Kroger,Copps,rule,7,1.0
+Super C Mart Kingston,Super C Mart Kingston,branded-unmatched,7,7.0
+Marianas Markets,Marianas Markets,branded-unmatched,6,6.0
+Hornbacher's,Hornbacher's,branded-unmatched,6,6.0
+Jerry's Foods,Jerry's Foods,branded-unmatched,6,6.0
+Jamboree Foods Oakley,Jamboree Foods Oakley,branded-unmatched,6,6.0
+Food Country USA,Food Country USA,branded-unmatched,6,6.0
+Foodarama,Foodarama,branded-unmatched,6,6.0
+Pruett's Food,Pruett's Food,branded-unmatched,6,6.0
+Randy's Neighborhood Market,Randy's Neighborhood Market,branded-unmatched,6,6.0
+Lion Supermarket,Lion Supermarket,branded-unmatched,6,5.0
+Trucchi's Supermarkets,Trucchi's Supermarkets,branded-unmatched,6,6.0
+Fresh,Fresh,branded-unmatched,6,6.0
+C&S Wholesale Grocers,Family Fresh Market,rule,6,6.0
+D'Agostinos Grocery Store,D'Agostinos Grocery Store,branded-unmatched,6,5.0
+Los Altos Ranch Market,Los Altos Ranch Market,branded-unmatched,6,6.0
+Moser's Foods,Moser's Foods,branded-unmatched,6,6.0
+Murphy's Fresh Markets,Murphy's Fresh Markets,branded-unmatched,6,6.0
+Tom's Food Markets,Tom's Food Markets,branded-unmatched,6,5.0
+Super Saver Foods,Super Saver Foods,branded-unmatched,6,6.0
+Albertsons,Andronico's,rule,6,5.0
+JONS Fresh Marketplace,JONS Fresh Marketplace,branded-unmatched,6,5.0
+The Sunshine Tomato Company,The Sunshine Tomato Company,branded-unmatched,6,6.0
+Rehkopf Cash Saver,Rehkopf Cash Saver,branded-unmatched,6,6.0
+Lynn's Superfoods,Lynn's Superfoods,branded-unmatched,6,6.0
+Nugget Markets,Nugget Markets,branded-unmatched,6,6.0
+Supremo Foods,Supremo Foods,branded-unmatched,6,6.0
+County Fair Food Store Mitchell,County Fair Food Store Mitchell,branded-unmatched,6,5.0
+Gene's Heartland Foods Smith Center,Gene's Heartland Foods Smith Center,branded-unmatched,6,6.0
+H-E-B,Joe V's,rule,6,6.0
+Harter House,Harter House,branded-unmatched,6,6.0
+Holiday Foods,Holiday Foods,branded-unmatched,6,6.0
+Amazon,Amazon Fresh,rule,6,6.0
+Lucky Seven General Stores,Lucky Seven General Stores,branded-unmatched,6,6.0
+Bitcoin Depot,Bitcoin Depot,branded-unmatched,6,6.0
+Shop n' Save-Weirton,Shop n' Save-Weirton,branded-unmatched,6,6.0
+Stew Leonard's,Stew Leonard's,branded-unmatched,6,6.0
+Biedronka,Biedronka,branded-unmatched,6,6.0
+New India Bazar,New India Bazar,branded-unmatched,5,5.0
+Amazing Grass,Amazing Grass,branded-unmatched,5,4.0
+Breaux Mart Supermarkets,Breaux Mart Supermarkets,branded-unmatched,5,5.0
+Price Choice Foodmarket,Price Choice Foodmarket,branded-unmatched,5,5.0
+Hills Food Stores,Hills Food Stores,branded-unmatched,5,5.0
+Angelo Caputo's Fresh Markets,Angelo Caputo's Fresh Markets,branded-unmatched,5,4.0
+Hong Kong Market Place,Hong Kong Market Place,branded-unmatched,5,4.0
+Polly's Country Markets,Polly's Country Markets,branded-unmatched,5,5.0
+Williams Foods,Williams Foods,branded-unmatched,5,5.0
+Ideal Market,Ideal Market,branded-unmatched,5,5.0
+Imperial Fresh Markets,Imperial Fresh Markets,branded-unmatched,5,5.0
+Hy-Klas Foods Hamilton & Polo,Hy-Klas Foods Hamilton & Polo,branded-unmatched,5,5.0
+"New Seasons Market 4500 Se Woodstock Portland, Or","New Seasons Market 4500 Se Woodstock Portland, Or",branded-unmatched,5,5.0
+Leppinks Food Centers,Leppinks Food Centers,branded-unmatched,5,5.0
+Chappell's Hometown Foods,Chappell's Hometown Foods,branded-unmatched,5,5.0
+Pepper Palace,Pepper Palace,branded-unmatched,5,4.0
+M & W  Gooding Market,M & W  Gooding Market,branded-unmatched,5,5.0
+Los Perez Supermarket- Mundelein,Los Perez Supermarket- Mundelein,branded-unmatched,5,5.0
+Bruce's Foodland Plus,Bruce's Foodland Plus,branded-unmatched,5,5.0
+Nilssen's,Nilssen's,branded-unmatched,5,5.0
+Coborn's,Coborn's,branded-unmatched,5,5.0
+Kroger,Pay Less,rule,5,5.0
+McKinnon's Markets & Super Butcher Shops,McKinnon's Markets & Super Butcher Shops,branded-unmatched,5,5.0
+El Rancho Meat Market,El Rancho Meat Market,branded-unmatched,5,5.0
+Lyons Market- Jennings,Lyons Market- Jennings,branded-unmatched,5,4.0
+New Grand Mart,New Grand Mart,branded-unmatched,5,5.0
+Shamrock Foodservice Warehouse,Shamrock Foodservice Warehouse,branded-unmatched,5,5.0
+POCO LOCO Supermercado,POCO LOCO Supermercado,branded-unmatched,5,5.0
+Shop Fair Of Pitkin Ave,Shop Fair Of Pitkin Ave,branded-unmatched,5,5.0
+Shop & Save Market / Local Market,Shop & Save Market / Local Market,branded-unmatched,5,5.0
+Buried Treasure Wellness,Buried Treasure Wellness,branded-unmatched,5,5.0
+Shop Smart Foods,Shop Smart Foods,branded-unmatched,5,5.0
+Culebra Super Meat Market,Culebra Super Meat Market,branded-unmatched,5,5.0
+Crosby's Marketplace,Crosby's Marketplace,branded-unmatched,5,5.0
+"Supermercado Guanajuato, 6201 Preston Highway","Supermercado Guanajuato, 6201 Preston Highway",branded-unmatched,5,5.0
+Pan-Asia Supermarket of Tulsa,Pan-Asia Supermarket of Tulsa,branded-unmatched,5,5.0
+KJ's Fresh Market,KJ's Fresh Market,branded-unmatched,5,5.0
+JustSave Foods,JustSave Foods,branded-unmatched,5,5.0
+Johnson's Giant Food,Johnson's Giant Food,branded-unmatched,5,5.0
+Country Mart,Country Mart,branded-unmatched,5,5.0
+Smithfield Foods Vernon,Smithfield Foods Vernon,branded-unmatched,5,5.0
+Super Mercado Jalisco,Super Mercado Jalisco,branded-unmatched,5,5.0
+Lep-Re-Kon Harvest Foods,Lep-Re-Kon Harvest Foods,branded-unmatched,5,5.0
+Royal Blue Grocery,Royal Blue Grocery,branded-unmatched,5,5.0
+Fiesta Foods,Fiesta Foods,branded-unmatched,5,5.0
+Savers Cost Plus,Savers Cost Plus,branded-unmatched,5,5.0
+A Dong Supermarket Group,A Dong Supermarket Group,branded-unmatched,4,4.0
+88 Seafood Supermarket Livermore CA,88 Seafood Supermarket Livermore CA,branded-unmatched,4,4.0
+"Hornbill Asian Market- Enid, OK","Hornbill Asian Market- Enid, OK",branded-unmatched,4,4.0
+Sysco,Sysco,branded-unmatched,4,4.0
+Price Chopper,Price Chopper,branded-unmatched,4,4.0
+Swiss Farms Brookhaven and Milmont Park,Swiss Farms Brookhaven and Milmont Park,branded-unmatched,4,4.0
+Pete's Market,Pete's Market,branded-unmatched,4,4.0
+Plum Market,Plum Market,branded-unmatched,4,4.0
+Jack & Jill,Jack & Jill,branded-unmatched,4,4.0
+Carniceria 3 Hermanos,Carniceria 3 Hermanos,branded-unmatched,4,4.0
+WM Grocery,WM Grocery,branded-unmatched,4,4.0
+"Adams Fairacre Farms, Inc.","Adams Fairacre Farms, Inc.",branded-unmatched,4,4.0
+Vishala Grocery,Vishala Grocery,branded-unmatched,4,4.0
+Warehouse Discount Groceries of Hanceville,Warehouse Discount Groceries of Hanceville,branded-unmatched,4,4.0
+JD'S market #,JD'S market #,branded-unmatched,4,3.0
+Albertsons,Amigos,rule,4,4.0
+World Market,World Market,branded-unmatched,4,4.0
+La Plaza Market,La Plaza Market,branded-unmatched,4,4.0
+Benders Foods,Benders Foods,branded-unmatched,4,4.0
+Dierbergs,Dierbergs,branded-unmatched,4,4.0
+Keemat Grocers,Keemat Grocers,branded-unmatched,4,4.0
+Oleson's Food Stores,Oleson's Food Stores,branded-unmatched,4,3.0
+Kent's Market,Kent's Market,branded-unmatched,4,4.0
+King Food Saver,King Food Saver,branded-unmatched,4,4.0
+Bestway Wholesale,Bestway Wholesale,branded-unmatched,4,4.0
+Dawn Foods,Dawn Foods,branded-unmatched,4,4.0
+Sonny's Super Foods Sidney,Sonny's Super Foods Sidney,branded-unmatched,4,4.0
+Fireworks Supermarket,Fireworks Supermarket,branded-unmatched,4,4.0
+Farm Stores,Farm Stores,branded-unmatched,4,4.0
+Neiman's Family Market,Neiman's Family Market,branded-unmatched,4,4.0
+Frescal Supermarket,Frescal Supermarket,branded-unmatched,4,4.0
+Las Montañas Supermarkets,Las Montañas Supermarkets,branded-unmatched,4,4.0
+Triveni Supermarket,Triveni Supermarket,branded-unmatched,4,4.0
+Bonfare market,Bonfare market,branded-unmatched,4,4.0
+D'Agostino,D'Agostino,branded-unmatched,4,4.0
+Suvidha Indo-Pak Groceries,Suvidha Indo-Pak Groceries,branded-unmatched,4,4.0
+El Ranchito Market,El Ranchito Market,branded-unmatched,4,4.0
+GLORY Supermarket L.T.D,GLORY Supermarket L.T.D,branded-unmatched,4,4.0
+Gourmet Glatt,Gourmet Glatt,branded-unmatched,4,4.0
+North Shore Farms,North Shore Farms,branded-unmatched,4,4.0
+Reynolds Market,Reynolds Market,branded-unmatched,4,4.0
+Bristol Farms,Bristol Farms,branded-unmatched,4,4.0
+New York Mart,New York Mart,branded-unmatched,4,3.0
+Rancho San Miguel Markets,Rancho San Miguel Markets,branded-unmatched,4,4.0
+Cain's Family Market,Cain's Family Market,branded-unmatched,4,3.0
+White's Foodliner- Scott City,White's Foodliner- Scott City,branded-unmatched,4,4.0
+Donelan's Supermarket,Donelan's Supermarket,branded-unmatched,4,4.0
+Dot Foods Inc,Dot Foods Inc,branded-unmatched,4,4.0
+URM Stores,URM Stores,branded-unmatched,4,4.0
+Uwajimaya,Uwajimaya,branded-unmatched,4,4.0
+McCaffrey's Food Markets,McCaffrey's Food Markets,branded-unmatched,4,4.0
+Matherne's Market at Longview,Matherne's Market at Longview,branded-unmatched,4,4.0
+Malone's Cost-Plus,Malone's Cost-Plus,branded-unmatched,4,4.0
+Market Basket of Franklin,Market Basket of Franklin,branded-unmatched,4,4.0
+B&T's Food Fresh Market,B&T's Food Fresh Market,branded-unmatched,4,3.0
+Associated Wholesale Grocers,Associated Wholesale Grocers,branded-unmatched,4,4.0
+Market Street,Market Street,branded-unmatched,4,4.0
+Marketon,Marketon,branded-unmatched,4,4.0
+Metropolitan Market Kirkland,Metropolitan Market Kirkland,branded-unmatched,4,4.0
+El Rio Grande,El Rio Grande,branded-unmatched,4,4.0
+El Torito Supermarket,El Torito Supermarket,branded-unmatched,4,4.0
+Erewhon,Erewhon,branded-unmatched,4,4.0
+Macey's,Macey's,branded-unmatched,4,4.0
+Lynn's Dakotamart,Lynn's Dakotamart,branded-unmatched,4,4.0
+Apple Market,Apple Market,branded-unmatched,4,4.0
+Lucky,Lucky,branded-unmatched,4,4.0
+Antillana Supermarket,Antillana Supermarket,branded-unmatched,3,3.0
+Apples Market,Apples Market,branded-unmatched,3,3.0
+Al Aqsa Supermarket Bronx,Al Aqsa Supermarket Bronx,branded-unmatched,3,3.0
+Atlantis Fresh Market,Atlantis Fresh Market,branded-unmatched,3,3.0
+MegaMart Winchester,MegaMart Winchester,branded-unmatched,3,3.0
+Mi Pueblo Market,Mi Pueblo Market,branded-unmatched,3,3.0
+Mi Rancho Supermarket,Mi Rancho Supermarket,branded-unmatched,3,3.0
+Met Fresh,Met Fresh,branded-unmatched,3,3.0
+Metro Market,Metro Market,branded-unmatched,3,3.0
+Mega Market,Mega Market,branded-unmatched,3,3.0
+Town & Country Supermarket,Town & Country Supermarket,branded-unmatched,3,3.0
+Mike's Foodland,Mike's Foodland,branded-unmatched,3,3.0
+Metro mon épicier,Metro mon épicier,branded-unmatched,3,3.0
+Seneca Foods,Seneca Foods,branded-unmatched,3,3.0
+Compare Foods of Clayton,Compare Foods of Clayton,branded-unmatched,3,3.0
+Extra Supermarket Dover,Extra Supermarket Dover,branded-unmatched,3,3.0
+Marino's Supermarket,Marino's Supermarket,branded-unmatched,3,3.0
+Mango,Mango,branded-unmatched,3,3.0
+Maya Market Omaha,Maya Market Omaha,branded-unmatched,3,3.0
+Lucky 7 Súpermarket Tully,Lucky 7 Súpermarket Tully,branded-unmatched,3,3.0
+Louie's Fresh Market,Louie's Fresh Market,branded-unmatched,3,3.0
+Atkinsons' Market,Atkinsons' Market,branded-unmatched,3,3.0
+Southside Market,Southside Market,branded-unmatched,3,3.0
+Southwest Farmers Market,Southwest Farmers Market,branded-unmatched,3,3.0
+Sparkle Market,Sparkle Market,branded-unmatched,3,3.0
+El Metate Cantina Mexicana,El Metate Cantina Mexicana,branded-unmatched,3,1.0
+El Milagro Tortillas,El Milagro Tortillas,branded-unmatched,3,3.0
+Edwards Brothers Supermarkets Unity,Edwards Brothers Supermarkets Unity,branded-unmatched,3,3.0
+"Wayfield Foods, Inc.","Wayfield Foods, Inc.",branded-unmatched,3,3.0
+168 Market,168 Market,branded-unmatched,3,3.0
+Gateway Foodland,Gateway Foodland,branded-unmatched,3,3.0
+SuperFresh Supermarket,SuperFresh Supermarket,branded-unmatched,3,3.0
+SuperFresh Supermarket of Bay Ridge,SuperFresh Supermarket of Bay Ridge,branded-unmatched,3,3.0
+Giant Foods of Warner Robins,Giant Foods of Warner Robins,branded-unmatched,3,3.0
+Giunta's Meat Farms,Giunta's Meat Farms,branded-unmatched,3,3.0
+Robért Fresh Market,Robért Fresh Market,branded-unmatched,3,3.0
+Cahoy's General Store,Cahoy's General Store,branded-unmatched,3,3.0
+Green Way Supermarket,Green Way Supermarket,branded-unmatched,3,3.0
+"Grocery Advantage-Enterprise, Alabama","Grocery Advantage-Enterprise, Alabama",branded-unmatched,3,3.0
+Grocery Depot McComb,Grocery Depot McComb,branded-unmatched,3,3.0
+Great Giant Supermarket Flint,Great Giant Supermarket Flint,branded-unmatched,3,3.0
+Green Valley Grocery,Green Valley Grocery,branded-unmatched,3,3.0
+Galleria Market,Galleria Market,branded-unmatched,3,3.0
+Gus's Market,Gus's Market,branded-unmatched,3,3.0
+County Market Coupon News,County Market Coupon News,branded-unmatched,3,3.0
+Creekside Country Market,Creekside Country Market,branded-unmatched,3,3.0
+Cosentino's Markets,Cosentino's Markets,branded-unmatched,3,3.0
+Gala Foods Supermarkets,Gala Foods Supermarkets,branded-unmatched,3,3.0
+Niemanns,Niemanns,branded-unmatched,3,3.0
+Kroger,Gerbes,rule,3,3.0
+O'Brien's Market,O'Brien's Market,branded-unmatched,3,3.0
+Ocean Mart,Ocean Mart,branded-unmatched,3,3.0
+Ok Market,Ok Market,branded-unmatched,3,3.0
+Brookshire Grocery,Super 1 Foods,rule,3,3.0
+Brooks Grocery,Brooks Grocery,branded-unmatched,3,3.0
+The Store,The Store,branded-unmatched,3,3.0
+Brown's Food Center,Brown's Food Center,branded-unmatched,3,3.0
+Buche Foods Oacoma,Buche Foods Oacoma,branded-unmatched,3,3.0
+Harvest Foods West Monroe,Harvest Foods West Monroe,branded-unmatched,3,3.0
+Harvest Market Stores,Harvest Market Stores,branded-unmatched,3,3.0
+Ream's Magna,Ream's Magna,branded-unmatched,3,3.0
+Hi Nabor Supermarket,Hi Nabor Supermarket,branded-unmatched,3,3.0
+Harvest Fare Hamilton,Harvest Fare Hamilton,branded-unmatched,3,3.0
+Citarella,Citarella,branded-unmatched,3,3.0
+City Farmers Market,City Farmers Market,branded-unmatched,3,3.0
+Chappell's Food Valu,Chappell's Food Valu,branded-unmatched,3,3.0
+Lin's Market,Lin's Market,branded-unmatched,3,3.0
+La Mexicana Market,La Mexicana Market,branded-unmatched,3,3.0
+Nespresso,Nespresso,branded-unmatched,3,3.0
+New Seasons Market,New Seasons Market,branded-unmatched,3,3.0
+La Superior Mercados,La Superior Mercados,branded-unmatched,3,3.0
+La Venadita Meat Market & Produce,La Venadita Meat Market & Produce,branded-unmatched,3,3.0
+La Morenita Market,La Morenita Market,branded-unmatched,3,3.0
+Krause's Market,Krause's Market,branded-unmatched,3,3.0
+Lakeside Market Plano,Lakeside Market Plano,branded-unmatched,3,3.0
+Lakeview Market,Lakeview Market,branded-unmatched,3,3.0
+La Super Economica Meat Market,La Super Economica Meat Market,branded-unmatched,3,3.0
+Supermercado Buy For Less,Supermercado Buy For Less,branded-unmatched,3,3.0
+Supermercado Mexico,Supermercado Mexico,branded-unmatched,3,3.0
+Super Supermarket,Super Supermarket,branded-unmatched,3,3.0
+Super dollar center  discount store,Super dollar center  discount store,branded-unmatched,3,3.0
+Chester's Markets,Chester's Markets,branded-unmatched,3,3.0
+Tom's Riverside Quality Foods,Tom's Riverside Quality Foods,branded-unmatched,3,3.0
+Tony's Stable,Tony's Stable,branded-unmatched,3,3.0
+Ken's Food Fair,Ken's Food Fair,branded-unmatched,3,3.0
+Junior's Supermarket,Junior's Supermarket,branded-unmatched,3,3.0
+Jusgo Duluth,Jusgo Duluth,branded-unmatched,3,3.0
+Jusgo Supermarket,Jusgo Supermarket,branded-unmatched,3,3.0
+King Cash Saver,King Cash Saver,branded-unmatched,3,3.0
+Pic N Sav,Pic N Sav,branded-unmatched,3,2.0
+John's Meat Market,John's Meat Market,branded-unmatched,3,3.0
+Joong Boo Market,Joong Boo Market,branded-unmatched,3,3.0
+"Hollywood Markets, Royal Oak","Hollywood Markets, Royal Oak",branded-unmatched,3,3.0
+Hometown Market,Hometown Market,branded-unmatched,3,3.0
+Hometown Markets,Hometown Markets,branded-unmatched,3,3.0
+Hong Kong Food Market,Hong Kong Food Market,branded-unmatched,3,3.0
+Hong Kong Market,Hong Kong Market,branded-unmatched,3,3.0
+Bharat Bazar,Bharat Bazar,branded-unmatched,3,3.0
+Trig's,Trig's,branded-unmatched,3,3.0
+Bingo Wholesale,Bingo Wholesale,branded-unmatched,3,3.0
+Uni-Mart of Ellwood City,Uni-Mart of Ellwood City,branded-unmatched,3,2.0
+Tropicana Supermarket Greenville,Tropicana Supermarket Greenville,branded-unmatched,3,3.0
+True Value,True Value,branded-unmatched,3,3.0
+Landis Supermarket,Landis Supermarket,branded-unmatched,3,3.0
+Las americas,Las americas,branded-unmatched,3,3.0
+Food Universe 138th Street,Food Universe 138th Street,branded-unmatched,3,3.0
+Froogel's Cost+ Foods,Froogel's Cost+ Foods,branded-unmatched,3,3.0
+Fresh Foods Gering,Fresh Foods Gering,branded-unmatched,3,3.0
+Sabor Tropical Supermarket,Sabor Tropical Supermarket,branded-unmatched,3,3.0
+Royal Market,Royal Market,branded-unmatched,3,3.0
+S & S Foods,S & S Foods,branded-unmatched,3,3.0
+Farmer's Country Market,Farmer's Country Market,branded-unmatched,3,3.0
+San Eli Supermarket,San Eli Supermarket,branded-unmatched,3,3.0
+Sander's Markets,Sander's Markets,branded-unmatched,3,3.0
+Express,Express,branded-unmatched,3,3.0
+Express Mart- Arkabutla,Express Mart- Arkabutla,branded-unmatched,3,3.0
+FireLake Foods,FireLake Foods,branded-unmatched,3,3.0
+Fefi's Grocery,Fefi's Grocery,branded-unmatched,3,3.0
+Savemart Supermarket,Savemart Supermarket,branded-unmatched,3,3.0
+Food Dynasty,Food Dynasty,branded-unmatched,3,3.0
+Delbert's Supermarket,Delbert's Supermarket,branded-unmatched,3,3.0
+Dash's Market,Dash's Market,branded-unmatched,3,3.0
+Dave's Fresh Marketplace,Dave's Fresh Marketplace,branded-unmatched,3,3.0
+Seasons Queens,Seasons Queens,branded-unmatched,3,3.0
+Street Corner,Street Corner,branded-unmatched,3,3.0
+"Stop To Save Supermarket Rainsville, Alabama","Stop To Save Supermarket Rainsville, Alabama",branded-unmatched,3,3.0
+Spring Market,Spring Market,branded-unmatched,3,3.0
+"Desi Brothers, Sugar Land","Desi Brothers, Sugar Land",branded-unmatched,3,3.0
+Hong Kong Supermarket,Hong Kong Supermarket,branded-unmatched,3,3.0
+R-Ranch Market,R-Ranch Market,branded-unmatched,3,3.0
+Carter's Supermarket,Carter's Supermarket,branded-unmatched,3,3.0
+Cash Saver Texas,Cash Saver Texas,branded-unmatched,3,3.0
+The Depot Express,The Depot Express,branded-unmatched,3,3.0
+Tapatia Supermarket,Tapatia Supermarket,branded-unmatched,3,3.0
+Bravo Supermarket Florida,Bravo Supermarket Florida,branded-unmatched,3,3.0
+Brigido's Fresh Market,Brigido's Fresh Market,branded-unmatched,3,3.0
+Thaxton's Market,Thaxton's Market,branded-unmatched,3,3.0
+JD's Supermarket,JD's Supermarket,branded-unmatched,3,3.0
+ValuMarket Supermarket,ValuMarket Supermarket,branded-unmatched,3,3.0
+"Daybreak Foods, Inc.","Daybreak Foods, Inc.",branded-unmatched,3,2.0
+Vallarta Supermarket,Vallarta Supermarket,branded-unmatched,3,3.0
+Acapulco Tropical y Más,Acapulco Tropical y Más,branded-unmatched,3,3.0
+Vista Supermarkets,Vista Supermarkets,branded-unmatched,3,3.0
+Wow Supermarket,Wow Supermarket,branded-unmatched,3,3.0
+Yes! Organic Market,Yes! Organic Market,branded-unmatched,3,3.0
+Adams Hometown Markets,Adams Hometown Markets,branded-unmatched,3,3.0
+yummy.com,yummy.com,branded-unmatched,3,3.0
+ZTao Marketplace,ZTao Marketplace,branded-unmatched,2,2.0
+West Liberty Foods Careers,West Liberty Foods Careers,branded-unmatched,2,2.0
+Wayfield Foods,Wayfield Foods,branded-unmatched,2,2.0
+Wayne Lee's Grocery & Market,Wayne Lee's Grocery & Market,branded-unmatched,2,2.0
+DeCicco & Sons Brewster,DeCicco & Sons Brewster,branded-unmatched,2,2.0
+Dale's Market,Dale's Market,branded-unmatched,2,2.0
+Econofoods,Econofoods,branded-unmatched,2,2.0
+El Mercado Fresco,El Mercado Fresco,branded-unmatched,2,2.0
+Spar,Spar,branded-unmatched,2,2.0
+Sparrow Sparkling Water,Sparrow Sparkling Water,branded-unmatched,2,2.0
+Aso Rock Market,Aso Rock Market,branded-unmatched,2,2.0
+United Supermarket,United Supermarket,branded-unmatched,2,2.0
+Utz Snacks,Utz Snacks,branded-unmatched,2,2.0
+US Market,US Market,branded-unmatched,2,2.0
+Lucky's Markets Ohio,Lucky's Markets Ohio,branded-unmatched,2,2.0
+Los Reyes Mexican Grill,Los Reyes Mexican Grill,branded-unmatched,2,2.0
+Martin's Super Markets,Martin's Super Markets,branded-unmatched,2,2.0
+Martins Country Store of Brushton,Martins Country Store of Brushton,branded-unmatched,2,2.0
+Market Express,Market Express,branded-unmatched,2,2.0
+Market Street Lynnfield,Market Street Lynnfield,branded-unmatched,2,1.0
+Marks and Spencer,Marks and Spencer,branded-unmatched,2,2.0
+Main Street Market Midland,Main Street Market Midland,branded-unmatched,2,2.0
+Jack's Fresh Market- Marinette & Menominee,Jack's Fresh Market- Marinette & Menominee,branded-unmatched,2,2.0
+Istanbul Supermarket,Istanbul Supermarket,branded-unmatched,2,2.0
+J & J Snack Foods,J & J Snack Foods,branded-unmatched,2,1.0
+Pioneer Valley,Pioneer Valley,branded-unmatched,2,2.0
+The Market At Anacortes,The Market At Anacortes,branded-unmatched,2,2.0
+The Crushed Olive,The Crushed Olive,branded-unmatched,2,2.0
+The General Store,The General Store,branded-unmatched,2,2.0
+The Global Food Baltimore,The Global Food Baltimore,branded-unmatched,2,2.0
+Talpa Supermercados,Talpa Supermercados,branded-unmatched,2,2.0
+Taylor Farms,Taylor Farms,branded-unmatched,2,1.0
+Teloloapan Meat Market,Teloloapan Meat Market,branded-unmatched,2,2.0
+T&T Supermarket Calgary Store,T&T Supermarket Calgary Store,branded-unmatched,2,2.0
+Caraluzzi's,Caraluzzi's,branded-unmatched,2,2.0
+Carlie C's Smithfield,Carlie C's Smithfield,branded-unmatched,2,2.0
+Randy's Bi Lo Foods,Randy's Bi Lo Foods,branded-unmatched,2,2.0
+Quality food market,Quality food market,branded-unmatched,2,2.0
+Quick-Tag,Quick-Tag,branded-unmatched,2,2.0
+ITaiwan Foods-Rowland Heights,ITaiwan Foods-Rowland Heights,branded-unmatched,2,2.0
+Hugo's,Hugo's,branded-unmatched,2,2.0
+Hilltop Supermarket,Hilltop Supermarket,branded-unmatched,2,2.0
+Holiday Farms Pet Resort,Holiday Farms Pet Resort,branded-unmatched,2,2.0
+Jumbo Foods,Jumbo Foods,branded-unmatched,2,2.0
+Pete's Produce,Pete's Produce,branded-unmatched,2,2.0
+Pick n Pay,Pick n Pay,branded-unmatched,2,2.0
+Patel Brothers of Bensalem,Patel Brothers of Bensalem,branded-unmatched,2,2.0
+Penzeys Spices,Penzeys Spices,branded-unmatched,2,2.0
+Pet Supermarket,Pet Supermarket,branded-unmatched,2,2.0
+PROJO,PROJO,branded-unmatched,2,2.0
+Pacific Supermarket,Pacific Supermarket,branded-unmatched,2,2.0
+Papaya Fruit Market,Papaya Fruit Market,branded-unmatched,2,2.0
+King Supermarket,King Supermarket,branded-unmatched,2,2.0
+Kelley's Market,Kelley's Market,branded-unmatched,2,2.0
+Tracy's Market,Tracy's Market,branded-unmatched,2,2.0
+Tom's Food Market,Tom's Food Market,branded-unmatched,2,2.0
+Tietgens,Tietgens,branded-unmatched,2,2.0
+Tiger Market,Tiger Market,branded-unmatched,2,2.0
+Byler's Farm Market,Byler's Farm Market,branded-unmatched,2,2.0
+Byrne Dairy,Byrne Dairy,branded-unmatched,2,2.0
+C & R Super Market,C & R Super Market,branded-unmatched,2,2.0
+Clarks Shoes,Clarks Shoes,branded-unmatched,2,2.0
+Clements' Marketplace,Clements' Marketplace,branded-unmatched,2,2.0
+Supermercados El Bodegon,Supermercados El Bodegon,branded-unmatched,2,2.0
+Rio Valley Market,Rio Valley Market,branded-unmatched,2,2.0
+Reid's Fine Foods,Reid's Fine Foods,branded-unmatched,2,2.0
+Redner's Quick Shoppe,Redner's Quick Shoppe,branded-unmatched,2,2.0
+Heritage's Dairy Stores,Heritage's Dairy Stores,branded-unmatched,2,2.0
+Hearthside Europe,Hearthside Europe,branded-unmatched,2,2.0
+Harvest Market,Harvest Market,branded-unmatched,2,2.0
+H.G. HILL Market,H.G. HILL Market,branded-unmatched,2,2.0
+Hardester's Market,Hardester's Market,branded-unmatched,2,2.0
+Hareli Fresh Market,Hareli Fresh Market,branded-unmatched,2,2.0
+Harmons,Harmons,branded-unmatched,2,2.0
+Tom's Food Center,Tom's Food Center,branded-unmatched,2,2.0
+The Marketplace,The Marketplace,branded-unmatched,2,2.0
+Buche Foods,Buche Foods,branded-unmatched,2,2.0
+Brothers Supermarket Dudley,Brothers Supermarket Dudley,branded-unmatched,2,2.0
+Broward Meat & Fish,Broward Meat & Fish,branded-unmatched,2,2.0
+Broad Street Market,Broad Street Market,branded-unmatched,2,1.0
+Brooklyn Harvest Market of Hallets Point,Brooklyn Harvest Market of Hallets Point,branded-unmatched,2,2.0
+Oliver's Market,Oliver's Market,branded-unmatched,2,2.0
+PAY LESS Packaging,PAY LESS Packaging,branded-unmatched,2,2.0
+PJP Marketplace,PJP Marketplace,branded-unmatched,2,2.0
+Nuts N more,Nuts N more,branded-unmatched,2,2.0
+La Carreta,La Carreta,branded-unmatched,2,2.0
+Cost Plus World Market,Cost Plus World Market,branded-unmatched,2,2.0
+Gala Foods,Gala Foods,branded-unmatched,2,2.0
+Gala Fresh Farms,Gala Fresh Farms,branded-unmatched,2,2.0
+GalaFresh Farms Supermarkets,GalaFresh Farms Supermarkets,branded-unmatched,2,2.0
+Groceryland,Groceryland,branded-unmatched,2,2.0
+Guerrero Meat Market,Guerrero Meat Market,branded-unmatched,2,2.0
+Grocery Services,Grocery Services,branded-unmatched,2,2.0
+Green Valley Marketplace,Green Valley Marketplace,branded-unmatched,2,2.0
+Gourmet Garage,Gourmet Garage,branded-unmatched,2,2.0
+Riverside Market,Riverside Market,branded-unmatched,2,2.0
+Roche Bros. Careers,Roche Bros. Careers,branded-unmatched,2,2.0
+Golden Flake,Golden Flake,branded-unmatched,2,2.0
+Gene's Family Market,Gene's Family Market,branded-unmatched,2,2.0
+George's Market and Celebrations,George's Market and Celebrations,branded-unmatched,2,2.0
+Get SUNMED,Get SUNMED,branded-unmatched,2,2.0
+Garcia's Market,Garcia's Market,branded-unmatched,2,2.0
+Garden Valley Farmers Market,Garden Valley Farmers Market,branded-unmatched,2,2.0
+GNC Live Well,GNC Live Well,branded-unmatched,2,2.0
+Super Mercado Mi Tierra,Super Mercado Mi Tierra,branded-unmatched,2,2.0
+Cottle Strawberry Farm,Cottle Strawberry Farm,branded-unmatched,2,1.0
+La Princesa Story Rd,La Princesa Story Rd,branded-unmatched,2,2.0
+La Ranchera Meat Market,La Ranchera Meat Market,branded-unmatched,2,2.0
+La Sabrosa Meat Market,La Sabrosa Meat Market,branded-unmatched,2,2.0
+La Morenita Meat Market,La Morenita Meat Market,branded-unmatched,2,2.0
+La Placita Bethel Market,La Placita Bethel Market,branded-unmatched,2,2.0
+La Hacienda,La Hacienda,branded-unmatched,2,2.0
+La Huerta Int. Market,La Huerta Int. Market,branded-unmatched,2,2.0
+La Mart Oakland Mills,La Mart Oakland Mills,branded-unmatched,2,2.0
+New Beginnings Farm,New Beginnings Farm,branded-unmatched,2,2.0
+Neighborhood Fresh,Neighborhood Fresh,branded-unmatched,2,2.0
+Mineirão One Stop Mart,Mineirão One Stop Mart,branded-unmatched,2,2.0
+Morelia Supermarket,Morelia Supermarket,branded-unmatched,2,2.0
+Farm Stores Harmony,Farm Stores Harmony,branded-unmatched,2,2.0
+Sal's Foods Wausaukee,Sal's Foods Wausaukee,branded-unmatched,2,2.0
+Saputo,Saputo,branded-unmatched,2,2.0
+Sarah's Tent Skokie,Sarah's Tent Skokie,branded-unmatched,2,2.0
+SOS Hydration,SOS Hydration,branded-unmatched,2,2.0
+Sabores Market Doral,Sabores Market Doral,branded-unmatched,2,2.0
+Russ Davis Wholesale,Russ Davis Wholesale,branded-unmatched,2,1.0
+S-Mart Foods,S-Mart Foods,branded-unmatched,2,2.0
+Rocky Top Market,Rocky Top Market,branded-unmatched,2,2.0
+Rowe's Supermarket,Rowe's Supermarket,branded-unmatched,2,2.0
+GIANT,GIANT,branded-unmatched,2,2.0
+Fresh to Go,Fresh to Go,branded-unmatched,2,2.0
+Foodland Markets,Foodland Markets,branded-unmatched,2,2.0
+Food Outlet,Food Outlet,branded-unmatched,2,2.0
+Food Plus,Food Plus,branded-unmatched,2,2.0
+Food Rite,Food Rite,branded-unmatched,2,2.0
+Giant Food,Giant Food,branded-unmatched,2,2.0
+Lincoln Market,Lincoln Market,branded-unmatched,2,2.0
+Little India,Little India,branded-unmatched,2,2.0
+Latino Market,Latino Market,branded-unmatched,2,2.0
+Union Market District,Union Market District,branded-unmatched,2,2.0
+Tropical Supermarket,Tropical Supermarket,branded-unmatched,2,2.0
+Turkey Hill,Turkey Hill,branded-unmatched,2,2.0
+Tradewinds Marketplace,Tradewinds Marketplace,branded-unmatched,2,2.0
+Boost Mobile,Boost Mobile,branded-unmatched,2,2.0
+Bi-Rite Market,Bi-Rite Market,branded-unmatched,2,2.0
+Big Bazaar,Big Bazaar,branded-unmatched,2,2.0
+Big Save Markets,Big Save Markets,branded-unmatched,2,2.0
+"Best Bargains, Inc.","Best Bargains, Inc.",branded-unmatched,2,2.0
+BestWay Market,BestWay Market,branded-unmatched,2,2.0
+Dick's Market,Dick's Market,branded-unmatched,2,2.0
+DeCicco & Sons Pelham,DeCicco & Sons Pelham,branded-unmatched,2,2.0
+DeCicco Family Markets,DeCicco Family Markets,branded-unmatched,2,2.0
+Del Monte Saudi Arabia Co Ltd,Del Monte Saudi Arabia Co Ltd,branded-unmatched,2,2.0
+Davis Food & Drug Vernal / Roosevelt,Davis Food & Drug Vernal / Roosevelt,branded-unmatched,2,2.0
+Seiwa Market Houston,Seiwa Market Houston,branded-unmatched,2,2.0
+Save More Market,Save More Market,branded-unmatched,2,2.0
+Save Mart,Save Mart,branded-unmatched,2,92.0
+Food Fast,Food Fast,branded-unmatched,2,2.0
+Feria Latina Supermarket SW 47th,Feria Latina Supermarket SW 47th,branded-unmatched,2,2.0
+Fiesta Foods & Meat Market,Fiesta Foods & Meat Market,branded-unmatched,2,2.0
+Farm Boy,Farm Boy,branded-unmatched,2,2.0
+Shop Bonus,Shop Bonus,branded-unmatched,2,2.0
+Extra Supermarket,Extra Supermarket,branded-unmatched,2,2.0
+Esh's Grocery Market,Esh's Grocery Market,branded-unmatched,2,2.0
+Eurogrocery-1 Rocky Hill,Eurogrocery-1 Rocky Hill,branded-unmatched,2,2.0
+"European Market, Greenville, SC","European Market, Greenville, SC",branded-unmatched,2,2.0
+Exito Fresh Market Freehold,Exito Fresh Market Freehold,branded-unmatched,2,2.0
+El Toro Market #14.    26963 date street murrieta ca,El Toro Market #14.    26963 date street murrieta ca,branded-unmatched,2,2.0
+Elmwood Village Farmers Market,Elmwood Village Farmers Market,branded-unmatched,2,2.0
+Enson Market Orlando,Enson Market Orlando,branded-unmatched,2,2.0
+El Rey Foods,El Rey Foods,branded-unmatched,2,2.0
+El Torito,El Torito,branded-unmatched,2,2.0
+Community Supermarket,Community Supermarket,branded-unmatched,2,2.0
+Sun Fresh,Sun Fresh,branded-unmatched,2,2.0
+Sunset Foods,Sunset Foods,branded-unmatched,2,2.0
+Sunshine Market,Sunshine Market,branded-unmatched,2,2.0
+Town and Country Markets,Town and Country Markets,branded-unmatched,2,2.0
+Mike's Market,Mike's Market,branded-unmatched,2,2.0
+Milam's Markets,Milam's Markets,branded-unmatched,2,2.0
+Mercado Latino Tianguis,Mercado Latino Tianguis,branded-unmatched,2,2.0
+Meena Bazar,Meena Bazar,branded-unmatched,2,2.0
+Mac's Cost Plus,Mac's Cost Plus,branded-unmatched,2,2.0
+Mad Butcher,Mad Butcher,branded-unmatched,2,2.0
+Lyons Market,Lyons Market,branded-unmatched,2,1.0
+America's Food Basket Lawrence,America's Food Basket Lawrence,branded-unmatched,2,2.0
+Belmont Beverage Fort Wayne,Belmont Beverage Fort Wayne,branded-unmatched,2,2.0
+Belmont Market,Belmont Market,branded-unmatched,2,2.0
+Ben's Supercenter,Ben's Supercenter,branded-unmatched,2,2.0
+Ameristop,Ameristop,branded-unmatched,2,2.0
+Al's Beer and Wine,Al's Beer and Wine,branded-unmatched,2,2.0
+Around the World Market: Raleigh,Around the World Market: Raleigh,branded-unmatched,2,2.0
+Value Market,Value Market,branded-unmatched,2,2.0
+Vinckier Foods-Yale,Vinckier Foods-Yale,branded-unmatched,2,2.0
+Acme Markets,Acme Markets,branded-unmatched,2,2.0
+"Village Market Ketchum, Idaho","Village Market Ketchum, Idaho",branded-unmatched,2,2.0
+Viet Hoa/Hua Food Market越华超市,Viet Hoa/Hua Food Market越华超市,branded-unmatched,2,2.0
+Zoyo,Zoyo,branded-unmatched,2,2.0
+サンディ 紫竹店,サンディ 紫竹店,branded-unmatched,1,1.0
+A&G Fine Foods,A&G Fine Foods,branded-unmatched,1,1.0
+A&S Fine Foods,A&S Fine Foods,branded-unmatched,1,1.0
+ABC,ABC,branded-unmatched,1,1.0
+"Basciani Foods, Inc.","Basciani Foods, Inc.",branded-unmatched,1,1.0
+Bassett's Market,Bassett's Market,branded-unmatched,1,1.0
+Baums Natural Foods,Baums Natural Foods,branded-unmatched,1,1.0
+BazaAr Supermarkets,BazaAr Supermarkets,branded-unmatched,1,1.0
+Beacon and Bridge Market,Beacon and Bridge Market,branded-unmatched,1,1.0
+Belcher Bingo,Belcher Bingo,branded-unmatched,1,1.0
+Amalgamated Sugar/White Satin,Amalgamated Sugar/White Satin,branded-unmatched,1,1.0
+Amapola Market,Amapola Market,branded-unmatched,1,1.0
+BIG STORE,BIG STORE,branded-unmatched,1,1.0
+Bake the Shape,Bake the Shape,branded-unmatched,1,1.0
+Balducci's Food Lover's Market,Balducci's Food Lover's Market,branded-unmatched,1,1.0
+Bally,Bally,branded-unmatched,1,1.0
+Baraka Market,Baraka Market,branded-unmatched,1,1.0
+Barbour,Barbour,branded-unmatched,1,1.0
+Bargain grocery,Bargain grocery,branded-unmatched,1,1.0
+Barons Market Menifee,Barons Market Menifee,branded-unmatched,1,1.0
+United Wholesale,United Wholesale,branded-unmatched,1,1.0
+V-Mart,V-Mart,branded-unmatched,1,1.0
+VIP market,VIP market,branded-unmatched,1,1.0
+Arvin International Marketing Inc.,Arvin International Marketing Inc.,branded-unmatched,1,1.0
+Asian Food Store,Asian Food Store,branded-unmatched,1,1.0
+Asian Supermarket,Asian Supermarket,branded-unmatched,1,1.0
+BERTRAND,BERTRAND,branded-unmatched,1,1.0
+BEST BUY BOUWMATERIALEN & HOME-CENTRE SURINAME,BEST BUY BOUWMATERIALEN & HOME-CENTRE SURINAME,branded-unmatched,1,1.0
+Triangle Stop,Triangle Stop,branded-unmatched,1,1.0
+Trinidad Benham  Sterling Colorado,Trinidad Benham  Sterling Colorado,branded-unmatched,1,1.0
+Troy Waterfront Farmers Market,Troy Waterfront Farmers Market,branded-unmatched,1,1.0
+Turkey Hill Minit Markets,Turkey Hill Minit Markets,branded-unmatched,1,1.0
+Twice the Ice Evansville,Twice the Ice Evansville,branded-unmatched,1,1.0
+Uncle Giuseppe's Marketplace,Uncle Giuseppe's Marketplace,branded-unmatched,1,1.0
+Union Avenue Christian Church,Union Avenue Christian Church,branded-unmatched,1,1.0
+United Markets,United Markets,branded-unmatched,1,1.0
+Lee Lee International Supermarkets,Lee Lee International Supermarkets,branded-unmatched,1,1.0
+Leggett & Platt,Leggett & Platt,branded-unmatched,1,1.0
+Liberty Food,Liberty Food,branded-unmatched,1,1.0
+Little's Food Store,Little's Food Store,branded-unmatched,1,1.0
+Livoti's Old World Market,Livoti's Old World Market,branded-unmatched,1,1.0
+Log Cabin Store & Eatery,Log Cabin Store & Eatery,branded-unmatched,1,1.0
+Lohas Fresh Mart,Lohas Fresh Mart,branded-unmatched,1,1.0
+Loop Markets,Loop Markets,branded-unmatched,1,1.0
+Mike's Country Store,Mike's Country Store,branded-unmatched,1,1.0
+Mike's Drive In Lombard St North Portland,Mike's Drive In Lombard St North Portland,branded-unmatched,1,1.0
+Lama,Lama,branded-unmatched,1,1.0
+"Land O'Lakes, Inc.","Land O'Lakes, Inc.",branded-unmatched,1,1.0
+Las Adelitas,Las Adelitas,branded-unmatched,1,1.0
+Lassens Natural Foods & Vitamins,Lassens Natural Foods & Vitamins,branded-unmatched,1,1.0
+Latinos Market,Latinos Market,branded-unmatched,1,1.0
+Lazy Acres Market,Lazy Acres Market,branded-unmatched,1,1.0
+Merci Market,Merci Market,branded-unmatched,1,1.0
+Metcalfe's Market,Metcalfe's Market,branded-unmatched,1,1.0
+Mi Ranchito Mexican Grill,Mi Ranchito Mexican Grill,branded-unmatched,1,1.0
+Mi Rancho Tortillas,Mi Rancho Tortillas,branded-unmatched,1,1.0
+Middle East Market,Middle East Market,branded-unmatched,1,1.0
+Middleswarth Potato Chips,Middleswarth Potato Chips,branded-unmatched,1,1.0
+Midtown Market,Midtown Market,branded-unmatched,1,1.0
+Midway Market,Midway Market,branded-unmatched,1,1.0
+Lowe's Mercado,Lowe's Mercado,branded-unmatched,1,1.0
+Luna Market,Luna Market,branded-unmatched,1,1.0
+M&M Food Market,M&M Food Market,branded-unmatched,1,1.0
+MAC Beleza,MAC Beleza,branded-unmatched,1,1.0
+MARTIN'S,MARTIN'S,branded-unmatched,1,1.0
+McClain's Food Market,McClain's Food Market,branded-unmatched,1,1.0
+Mercado Soder,Mercado Soder,branded-unmatched,1,1.0
+Mercadò,Mercadò,branded-unmatched,1,1.0
+La Providencia,La Providencia,branded-unmatched,1,1.0
+La perla tapatia,La perla tapatia,branded-unmatched,1,1.0
+La Única Polanco,La Única Polanco,branded-unmatched,1,1.0
+LaBonne's Markets,LaBonne's Markets,branded-unmatched,1,1.0
+Lake Serene Grocery Inc,Lake Serene Grocery Inc,branded-unmatched,1,1.0
+LakeSide Food Store,LakeSide Food Store,branded-unmatched,1,1.0
+Lakeview Grocery,Lakeview Grocery,branded-unmatched,1,1.0
+L & L MarketPlace,L & L MarketPlace,branded-unmatched,1,1.0
+La Ganadera Gourmet Meat Market,La Ganadera Gourmet Meat Market,branded-unmatched,1,1.0
+La Internacional,La Internacional,branded-unmatched,1,1.0
+La Mart Alexandria,La Mart Alexandria,branded-unmatched,1,1.0
+La Mexicanita Restauran & Bar,La Mexicanita Restauran & Bar,branded-unmatched,1,1.0
+La Montañita Food Co-op,La Montañita Food Co-op,branded-unmatched,1,1.0
+La Perla,La Perla,branded-unmatched,1,1.0
+La Piñata,La Piñata,branded-unmatched,1,1.0
+La Poblana Supermarket & Restaurant,La Poblana Supermarket & Restaurant,branded-unmatched,1,1.0
+Mustard Seed Market,Mustard Seed Market,branded-unmatched,1,1.0
+My market,My market,branded-unmatched,1,1.0
+Mystic Market,Mystic Market,branded-unmatched,1,1.0
+National Beef,National Beef,branded-unmatched,1,1.0
+Native Sun Natural Foods Market,Native Sun Natural Foods Market,branded-unmatched,1,1.0
+Nature's Produce,Nature's Produce,branded-unmatched,1,1.0
+Nepali Bazaar,Nepali Bazaar,branded-unmatched,1,1.0
+New Castle Farmers Market,New Castle Farmers Market,branded-unmatched,1,1.0
+Los Amigos Bar,Los Amigos Bar,branded-unmatched,1,1.0
+Los Dos Compadres,Los Dos Compadres,branded-unmatched,1,1.0
+Los Feliz- Cali Mex Restaurant,Los Feliz- Cali Mex Restaurant,branded-unmatched,1,1.0
+Minit Mart,Minit Mart,branded-unmatched,1,1.0
+Mollie Stone's Markets,Mollie Stone's Markets,branded-unmatched,1,1.0
+Monterey Market,Monterey Market,branded-unmatched,1,1.0
+Mountain Valley Spring Water,Mountain Valley Spring Water,branded-unmatched,1,1.0
+Mulberry,Mulberry,branded-unmatched,1,1.0
+KenJo Markets,KenJo Markets,branded-unmatched,1,1.0
+Kenyon's,Kenyon's,branded-unmatched,1,1.0
+Kikkoman Sales USA,Kikkoman Sales USA,branded-unmatched,1,1.0
+King's Seafood Company,King's Seafood Company,branded-unmatched,1,1.0
+Know-how GET IN SHAPE,Know-how GET IN SHAPE,branded-unmatched,1,1.0
+Konark Grocers Omaha,Konark Grocers Omaha,branded-unmatched,1,1.0
+Kowalski's Markets,Kowalski's Markets,branded-unmatched,1,1.0
+Pantera Market,Pantera Market,branded-unmatched,1,1.0
+Orlando's Market,Orlando's Market,branded-unmatched,1,1.0
+Oxendales Market,Oxendales Market,branded-unmatched,1,1.0
+Just Save,Just Save,branded-unmatched,1,1.0
+"KJ's Market, Clearwater, SC","KJ's Market, Clearwater, SC",branded-unmatched,1,1.0
+"Kaiser Pickles, LLC","Kaiser Pickles, LLC",branded-unmatched,1,1.0
+Karen Kane,Karen Kane,branded-unmatched,1,1.0
+Karns Quailty Foods,Karns Quailty Foods,branded-unmatched,1,1.0
+Ken's Fruit Market,Ken's Fruit Market,branded-unmatched,1,1.0
+Norm's Market,Norm's Market,branded-unmatched,1,1.0
+North Mankato Taylor Library,North Mankato Taylor Library,branded-unmatched,1,1.0
+North Market,North Market,branded-unmatched,1,1.0
+Nugget Market,Nugget Market,branded-unmatched,1,1.0
+"Nutrishop Bronx, NY","Nutrishop Bronx, NY",branded-unmatched,1,1.0
+Oberto Beef Jerky,Oberto Beef Jerky,branded-unmatched,1,1.0
+Old Dutch,Old Dutch,branded-unmatched,1,1.0
+Old World Olive Co.,Old World Olive Co.,branded-unmatched,1,1.0
+La Barata,La Barata,branded-unmatched,1,1.0
+La Bodega LTD,La Bodega LTD,branded-unmatched,1,1.0
+La Calandria,La Calandria,branded-unmatched,1,1.0
+La Chiquita Western Wear Inc,La Chiquita Western Wear Inc,branded-unmatched,1,1.0
+La Estrellita Market,La Estrellita Market,branded-unmatched,1,1.0
+La Fronterabar,La Fronterabar,branded-unmatched,1,1.0
+Niagara Produce,Niagara Produce,branded-unmatched,1,1.0
+Nino Salvaggio International Marketplace,Nino Salvaggio International Marketplace,branded-unmatched,1,1.0
+John Henry's Meats,John Henry's Meats,branded-unmatched,1,1.0
+Johnny Air New York,Johnny Air New York,branded-unmatched,1,1.0
+"Johnny Quik Food Stores, Inc.","Johnny Quik Food Stores, Inc.",branded-unmatched,1,1.0
+Jones' Food Center,Jones' Food Center,branded-unmatched,1,1.0
+"Jubilee Market, Covent Garden","Jubilee Market, Covent Garden",branded-unmatched,1,1.0
+Hillsboro Farmers' Markets,Hillsboro Farmers' Markets,branded-unmatched,1,1.0
+Hilltop Market,Hilltop Market,branded-unmatched,1,1.0
+Holiday Quality Foods,Holiday Quality Foods,branded-unmatched,1,1.0
+J&H Family Store,J&H Family Store,branded-unmatched,1,1.0
+JBS USA,JBS USA,branded-unmatched,1,1.0
+Jalisco Market,Jalisco Market,branded-unmatched,1,1.0
+James Ranch Market and Grill,James Ranch Market and Grill,branded-unmatched,1,1.0
+Jasper's Market,Jasper's Market,branded-unmatched,1,1.0
+Jet Food Stores,Jet Food Stores,branded-unmatched,1,1.0
+Jewell's Market,Jewell's Market,branded-unmatched,1,1.0
+Jim's Market,Jim's Market,branded-unmatched,1,1.0
+Pickwick Supermarket,Pickwick Supermarket,branded-unmatched,1,1.0
+Pike Place Market,Pike Place Market,branded-unmatched,1,1.0
+Positive Beverage,Positive Beverage,branded-unmatched,1,1.0
+Informed Choice Insurance Agency,Informed Choice Insurance Agency,branded-unmatched,1,1.0
+InterCambio Express Inc.,InterCambio Express Inc.,branded-unmatched,1,1.0
+Intermarché,Intermarché,branded-unmatched,1,1.0
+International Wholesale,International Wholesale,branded-unmatched,1,1.0
+Inwood National Bank,Inwood National Bank,branded-unmatched,1,1.0
+Parker's Careers,Parker's Careers,branded-unmatched,1,1.0
+Parrot Coffee,Parrot Coffee,branded-unmatched,1,1.0
+Pasadena Farmers Market,Pasadena Farmers Market,branded-unmatched,1,1.0
+Pastosa Ravioli,Pastosa Ravioli,branded-unmatched,1,1.0
+Pat's Foods,Pat's Foods,branded-unmatched,1,1.0
+Pet Dairy,Pet Dairy,branded-unmatched,1,1.0
+Peterbrooke Chocolatier Tuscaloosa,Peterbrooke Chocolatier Tuscaloosa,branded-unmatched,1,1.0
+Philabundance,Philabundance,branded-unmatched,1,1.0
+Hebert's Specialty Meats,Hebert's Specialty Meats,branded-unmatched,1,1.0
+Heights Meat Market,Heights Meat Market,branded-unmatched,1,1.0
+Henderson Meat Processors,Henderson Meat Processors,branded-unmatched,1,1.0
+Hickman's Family Farms,Hickman's Family Farms,branded-unmatched,1,1.0
+Highland Park Market,Highland Park Market,branded-unmatched,1,1.0
+Ray's Grocery,Ray's Grocery,branded-unmatched,1,1.0
+Red Apple Farm,Red Apple Farm,branded-unmatched,1,1.0
+Red Barn Market,Red Barn Market,branded-unmatched,1,1.0
+Raceway #739 Whitwell,Raceway #739 Whitwell,branded-unmatched,1,1.0
+Rahama African Market,Rahama African Market,branded-unmatched,1,1.0
+H-Mart UW,H-Mart UW,branded-unmatched,1,1.0
+Hampton Farms Peanuts & Nut Butters,Hampton Farms Peanuts & Nut Butters,branded-unmatched,1,1.0
+Harris Farm,Harris Farm,branded-unmatched,1,1.0
+Harvest Meat Markets,Harvest Meat Markets,branded-unmatched,1,1.0
+Harvey's Market,Harvey's Market,branded-unmatched,1,1.0
+Hashems Roastery & Market,Hashems Roastery & Market,branded-unmatched,1,1.0
+Pumpkinville,Pumpkinville,branded-unmatched,1,1.0
+Pão de Açúcar,Pão de Açúcar,branded-unmatched,1,1.0
+QC Meat Market Quinta Caporales,QC Meat Market Quinta Caporales,branded-unmatched,1,1.0
+Quality Dairy,Quality Dairy,branded-unmatched,1,1.0
+Quality Foods Hayes,Quality Foods Hayes,branded-unmatched,1,1.0
+Quality Foods Marketing Ltd.,Quality Foods Marketing Ltd.,branded-unmatched,1,1.0
+Quench It Soda,Quench It Soda,branded-unmatched,1,1.0
+ROCS,ROCS,branded-unmatched,1,1.0
+Home City Ice Hanover,Home City Ice Hanover,branded-unmatched,1,1.0
+Hopey & Company Black Mountain,Hopey & Company Black Mountain,branded-unmatched,1,1.0
+Howell Mountain Vineyards,Howell Mountain Vineyards,branded-unmatched,1,1.0
+Huckleberry's Natural Market,Huckleberry's Natural Market,branded-unmatched,1,1.0
+Postal Annex Dunlap TN,Postal Annex Dunlap TN,branded-unmatched,1,1.0
+Price Cutter Center,Price Cutter Center,branded-unmatched,1,1.0
+Prima Oliva,Prima Oliva,branded-unmatched,1,1.0
+Provisions Market Hall,Provisions Market Hall,branded-unmatched,1,1.0
+Gambino's Pizza,Gambino's Pizza,branded-unmatched,1,1.0
+Garfield's Beverage Warehouse,Garfield's Beverage Warehouse,branded-unmatched,1,1.0
+Gasway,Gasway,branded-unmatched,1,1.0
+Gateway Foodland -Moulton Location-,Gateway Foodland -Moulton Location-,branded-unmatched,1,1.0
+Geissler's Shopping Center,Geissler's Shopping Center,branded-unmatched,1,1.0
+Gemperle,Gemperle,branded-unmatched,1,1.0
+George Street Co-op,George Street Co-op,branded-unmatched,1,1.0
+Georgetown Market,Georgetown Market,branded-unmatched,1,1.0
+Gordos,Gordos,branded-unmatched,1,1.0
+Goulding's Lodge,Goulding's Lodge,branded-unmatched,1,1.0
+Gourmet Latte,Gourmet Latte,branded-unmatched,1,1.0
+Grange Co-Op,Grange Co-Op,branded-unmatched,1,1.0
+Graul's Market-Annapolis & Cape St. Claire,Graul's Market-Annapolis & Cape St. Claire,branded-unmatched,1,1.0
+Great Wall Supermarket,Great Wall Supermarket,branded-unmatched,1,1.0
+Green Heart Meals,Green Heart Meals,branded-unmatched,1,1.0
+Greggs,Greggs,branded-unmatched,1,1.0
+Roberts Market,Roberts Market,branded-unmatched,1,1.0
+Rocket,Rocket,branded-unmatched,1,1.0
+Rockport España,Rockport España,branded-unmatched,1,1.0
+Rockview Dairy,Rockview Dairy,branded-unmatched,1,1.0
+Good Harvest Market and Hop Harvest & Vine,Good Harvest Market and Hop Harvest & Vine,branded-unmatched,1,1.0
+Good's Store Inc,Good's Store Inc,branded-unmatched,1,1.0
+"Goodwill Industries International, Inc.","Goodwill Industries International, Inc.",branded-unmatched,1,1.0
+Goodwoods British Market,Goodwoods British Market,branded-unmatched,1,1.0
+Red Gold Corporate Headquarters,Red Gold Corporate Headquarters,branded-unmatched,1,1.0
+Reeves Market,Reeves Market,branded-unmatched,1,1.0
+Reliance Market,Reliance Market,branded-unmatched,1,1.0
+Renninger's Melbourne Flea and Farmer's Market,Renninger's Melbourne Flea and Farmer's Market,branded-unmatched,1,1.0
+Ria Money Transfer,Ria Money Transfer,branded-unmatched,1,1.0
+Riceland,Riceland,branded-unmatched,1,1.0
+River City Pawn Madisonville,River City Pawn Madisonville,branded-unmatched,1,1.0
+Riverside Grocery,Riverside Grocery,branded-unmatched,1,1.0
+Fannie May & Harry London Chocolates,Fannie May & Harry London Chocolates,branded-unmatched,1,1.0
+Farm To You by Bomvida,Farm To You by Bomvida,branded-unmatched,1,1.0
+Fast Stop,Fast Stop,branded-unmatched,1,1.0
+Federal Meats,Federal Meats,branded-unmatched,1,1.0
+Fiesta Latina Restaurant Inc.,Fiesta Latina Restaurant Inc.,branded-unmatched,1,1.0
+Fisher's Market,Fisher's Market,branded-unmatched,1,1.0
+Five star Meadville,Five star Meadville,branded-unmatched,1,1.0
+Florida Citrus Center,Florida Citrus Center,branded-unmatched,1,1.0
+S & T Provisions,S & T Provisions,branded-unmatched,1,1.0
+SAVI Provisions at Emory Village,SAVI Provisions at Emory Village,branded-unmatched,1,1.0
+SD Thai Hot Sauce,SD Thai Hot Sauce,branded-unmatched,1,1.0
+SMART choice,SMART choice,branded-unmatched,1,1.0
+"Sam's Chowder House, Half Moon Bay","Sam's Chowder House, Half Moon Bay",branded-unmatched,1,1.0
+Sanwa Farmer's Market,Sanwa Farmer's Market,branded-unmatched,1,1.0
+Saraga Northern Lights,Saraga Northern Lights,branded-unmatched,1,1.0
+Fancy Fruit & Produce Of Lakeland,Fancy Fruit & Produce Of Lakeland,branded-unmatched,1,1.0
+Friendly City Food Co-op,Friendly City Food Co-op,branded-unmatched,1,1.0
+Frutilandia Queen Creek,Frutilandia Queen Creek,branded-unmatched,1,1.0
+Fulton Bank,Fulton Bank,branded-unmatched,1,1.0
+G&E Hardware & Sporting Goods,G&E Hardware & Sporting Goods,branded-unmatched,1,1.0
+G-Mart,G-Mart,branded-unmatched,1,1.0
+Ron's Market,Ron's Market,branded-unmatched,1,1.0
+Rosinella,Rosinella,branded-unmatched,1,1.0
+Round The Clock Family Restaurant,Round The Clock Family Restaurant,branded-unmatched,1,1.0
+Go Grocer,Go Grocer,branded-unmatched,1,1.0
+Golden Peanut Company,Golden Peanut Company,branded-unmatched,1,1.0
+Food Smart,Food Smart,branded-unmatched,1,1.0
+FoodLand,FoodLand,branded-unmatched,1,1.0
+FoodWorks,FoodWorks,branded-unmatched,1,1.0
+Fort Myers Fish and Seafood,Fort Myers Fish and Seafood,branded-unmatched,1,1.0
+FreshPoint,FreshPoint,branded-unmatched,1,1.0
+Freshtown,Freshtown,branded-unmatched,1,1.0
+Fair Oaks Dairy Farm,Fair Oaks Dairy Farm,branded-unmatched,1,1.0
+Fairmount,Fairmount,branded-unmatched,1,1.0
+Fairvilla East Palatka,Fairvilla East Palatka,branded-unmatched,1,1.0
+Fairway Finer Foods,Fairway Finer Foods,branded-unmatched,1,1.0
+Shearer's Foods,Shearer's Foods,branded-unmatched,1,1.0
+Shedd Aquarium,Shedd Aquarium,branded-unmatched,1,1.0
+Shiloh Market,Shiloh Market,branded-unmatched,1,1.0
+Shop-N-Go,Shop-N-Go,branded-unmatched,1,1.0
+El Torito Meat Market,El Torito Meat Market,branded-unmatched,1,1.0
+"El Torito, mexikanisches Restaurant","El Torito, mexikanisches Restaurant",branded-unmatched,1,1.0
+El Toro Market #5 San Jacinto,El Toro Market #5 San Jacinto,branded-unmatched,1,1.0
+El Valle De La Sultana,El Valle De La Sultana,branded-unmatched,1,1.0
+Ericksons Thriftway,Ericksons Thriftway,branded-unmatched,1,1.0
+Erie Foods,Erie Foods,branded-unmatched,1,1.0
+Exotic Snack Guys,Exotic Snack Guys,branded-unmatched,1,1.0
+FOUR SEASONS MARKETS,FOUR SEASONS MARKETS,branded-unmatched,1,1.0
+"Seafarers International Union of North America, AFL-CIO","Seafarers International Union of North America, AFL-CIO",branded-unmatched,1,1.0
+Seasons Olive Oil & Vinegar Taproom,Seasons Olive Oil & Vinegar Taproom,branded-unmatched,1,1.0
+Seeley Lake Motor Lodge,Seeley Lake Motor Lodge,branded-unmatched,1,1.0
+"Shamrock Bank, N.A.","Shamrock Bank, N.A.",branded-unmatched,1,1.0
+Shared Harvest Foodbank,Shared Harvest Foodbank,branded-unmatched,1,1.0
+Sharp Shopper Grocer,Sharp Shopper Grocer,branded-unmatched,1,1.0
+El Surtidor De Occidente,El Surtidor De Occidente,branded-unmatched,1,1.0
+El Tigre Food Stores,El Tigre Food Stores,branded-unmatched,1,1.0
+Food Basics,Food Basics,branded-unmatched,1,1.0
+Food Fair Jerome Avenue,Food Fair Jerome Avenue,branded-unmatched,1,1.0
+Saubel's Markets,Saubel's Markets,branded-unmatched,1,1.0
+Sav-A-step 41 PALMYRA,Sav-A-step 41 PALMYRA,branded-unmatched,1,1.0
+Save More,Save More,branded-unmatched,1,1.0
+Savory Spice,Savory Spice,branded-unmatched,1,1.0
+Schuster Concrete,Schuster Concrete,branded-unmatched,1,1.0
+Scotchman,Scotchman,branded-unmatched,1,1.0
+Daily Deals,Daily Deals,branded-unmatched,1,1.0
+Dainobu,Dainobu,branded-unmatched,1,1.0
+Dakota Butcher-Rapid City,Dakota Butcher-Rapid City,branded-unmatched,1,1.0
+Dancing Eagle Casino,Dancing Eagle Casino,branded-unmatched,1,1.0
+Dari Mart Stores,Dari Mart Stores,branded-unmatched,1,1.0
+De Mi País Market,De Mi País Market,branded-unmatched,1,1.0
+"Del Sol Market, Somerton Arizona","Del Sol Market, Somerton Arizona",branded-unmatched,1,1.0
+Delhaize Luxembourg,Delhaize Luxembourg,branded-unmatched,1,1.0
+Eagle Foods,Eagle Foods,branded-unmatched,1,1.0
+Earthbound Farm,Earthbound Farm,branded-unmatched,1,1.0
+Eastside Food Co-op,Eastside Food Co-op,branded-unmatched,1,1.0
+El Mezquite Market,El Mezquite Market,branded-unmatched,1,1.0
+El Pueblo market,El Pueblo market,branded-unmatched,1,1.0
+El Ranchito,El Ranchito,branded-unmatched,1,1.0
+El Rancho,El Rancho,branded-unmatched,1,1.0
+El Rancho Market,El Rancho Market,branded-unmatched,1,1.0
+Southern Market,Southern Market,branded-unmatched,1,1.0
+Specialty  Produce,Specialty  Produce,branded-unmatched,1,1.0
+Divine Beauty Supplies,Divine Beauty Supplies,branded-unmatched,1,1.0
+Don Patricio Products,Don Patricio Products,branded-unmatched,1,1.0
+Dorothy Lane Market,Dorothy Lane Market,branded-unmatched,1,1.0
+Dos Toros NB,Dos Toros NB,branded-unmatched,1,1.0
+Dulcemania mexico inc.,Dulcemania mexico inc.,branded-unmatched,1,1.0
+Duty Free,Duty Free,branded-unmatched,1,1.0
+Signature Market,Signature Market,branded-unmatched,1,1.0
+Silver Dollar Sales,Silver Dollar Sales,branded-unmatched,1,1.0
+Silverleaf Neighborhood,Silverleaf Neighborhood,branded-unmatched,1,1.0
+Simmons Foods,Simmons Foods,branded-unmatched,1,1.0
+Socosani US,Socosani US,branded-unmatched,1,1.0
+Sofo Foods,Sofo Foods,branded-unmatched,1,1.0
+Sooner Foods,Sooner Foods,branded-unmatched,1,1.0
+Southeastern Food Supplies,Southeastern Food Supplies,branded-unmatched,1,1.0
+Commodities Natural Market,Commodities Natural Market,branded-unmatched,1,1.0
+Compass Minerals,Compass Minerals,branded-unmatched,1,1.0
+Conagra Brands,Conagra Brands,branded-unmatched,1,1.0
+Confia Financial Services,Confia Financial Services,branded-unmatched,1,1.0
+Convenient of 42n Street Lorain Ohio,Convenient of 42n Street Lorain Ohio,branded-unmatched,1,1.0
+Corner market,Corner market,branded-unmatched,1,1.0
+Country Fair,Country Fair,branded-unmatched,1,1.0
+Court Street Grocers,Court Street Grocers,branded-unmatched,1,1.0
+Strack & Van Til Delivered,Strack & Van Til Delivered,branded-unmatched,1,1.0
+Strand Bookstore,Strand Bookstore,branded-unmatched,1,1.0
+Subzi Mandi Iselin,Subzi Mandi Iselin,branded-unmatched,1,1.0
+Sunny Florida Dairy,Sunny Florida Dairy,branded-unmatched,1,1.0
+Sunrise Marketing,Sunrise Marketing,branded-unmatched,1,1.0
+Sunrise.ch,Sunrise.ch,branded-unmatched,1,1.0
+Sunset Mart,Sunset Mart,branded-unmatched,1,1.0
+Coconut Hill Texas,Coconut Hill Texas,branded-unmatched,1,1.0
+Staples,Staples,branded-unmatched,1,1.0
+Star Market Pasig,Star Market Pasig,branded-unmatched,1,1.0
+Star Super Market,Star Super Market,branded-unmatched,1,1.0
+Starkville: Mississippi's College Town,Starkville: Mississippi's College Town,branded-unmatched,1,1.0
+Stoney Ridge Winery,Stoney Ridge Winery,branded-unmatched,1,1.0
+Stop -N- Save,Stop -N- Save,branded-unmatched,1,1.0
+Stop N Go Clifton,Stop N Go Clifton,branded-unmatched,1,1.0
+Stop-N-Shop,Stop-N-Shop,branded-unmatched,1,1.0
+Delicias De Espana,Delicias De Espana,branded-unmatched,1,1.0
+DeloMall,DeloMall,branded-unmatched,1,1.0
+Demopolis SportsPlex,Demopolis SportsPlex,branded-unmatched,1,1.0
+Di Bruno Bros.,Di Bruno Bros.,branded-unmatched,1,1.0
+Diamond Internacional de México,Diamond Internacional de México,branded-unmatched,1,1.0
+Diana's Seafood,Diana's Seafood,branded-unmatched,1,1.0
+Spice House Cascade,Spice House Cascade,branded-unmatched,1,1.0
+Sprankle's Neighborhood Markets,Sprankle's Neighborhood Markets,branded-unmatched,1,1.0
+Chico's,Chico's,branded-unmatched,1,1.0
+Chowrastha,Chowrastha,branded-unmatched,1,1.0
+Chu's Mart,Chu's Mart,branded-unmatched,1,1.0
+City Market Carlisle,City Market Carlisle,branded-unmatched,1,1.0
+"Clark's Market, Lowry","Clark's Market, Lowry",branded-unmatched,1,1.0
+Busy Bee,Busy Bee,branded-unmatched,1,1.0
+C&S Wholesale Grocers,Forest Hills Foods,rule,1,1.0
+CT Beverage Mart,CT Beverage Mart,branded-unmatched,1,1.0
+Central Store,Central Store,branded-unmatched,1,1.0
+Cermak Produce,Cermak Produce,branded-unmatched,1,1.0
+Champagne Super Foods Inc.,Champagne Super Foods Inc.,branded-unmatched,1,1.0
+Champagne's Market in Lafayette,Champagne's Market in Lafayette,branded-unmatched,1,1.0
+Champs Chicken,Champs Chicken,branded-unmatched,1,1.0
+Chavez Grocery,Chavez Grocery,branded-unmatched,1,1.0
+Cherians International Fresh Market,Cherians International Fresh Market,branded-unmatched,1,1.0
+Cherry On Top,Cherry On Top,branded-unmatched,1,1.0
+Super Save Discount Foods Store,Super Save Discount Foods Store,branded-unmatched,1,1.0
+Super Saver Columbus,Super Saver Columbus,branded-unmatched,1,1.0
+SuperFresh Middlesex,SuperFresh Middlesex,branded-unmatched,1,1.0
+Superior Stores Co.,Superior Stores Co.,branded-unmatched,1,1.0
+"Superlo Foods-Senatobia, MS","Superlo Foods-Senatobia, MS",branded-unmatched,1,1.0
+Supermercados El Guero De Farnsworth,Supermercados El Guero De Farnsworth,branded-unmatched,1,1.0
+Supermercados Teloloapan de Houston,Supermercados Teloloapan de Houston,branded-unmatched,1,1.0
+Central Market Kuala Lumpur,Central Market Kuala Lumpur,branded-unmatched,1,1.0
+Crossroads Trading,Crossroads Trading,branded-unmatched,1,1.0
+Cub,Cub,branded-unmatched,1,1.0
+Culinary Depot,Culinary Depot,branded-unmatched,1,1.0
+Super 1 Foods,Super 1 Foods,branded-unmatched,1,1.0
+Super C,Super C,branded-unmatched,1,1.0
+Super Choice Foods,Super Choice Foods,branded-unmatched,1,1.0
+Super Mercado Gonzalez,Super Mercado Gonzalez,branded-unmatched,1,1.0
+Super Quik Inc.,Super Quik Inc.,branded-unmatched,1,1.0
+Bratchers Market,Bratchers Market,branded-unmatched,1,1.0
+Broadway Dry Cleaners,Broadway Dry Cleaners,branded-unmatched,1,1.0
+Brookhaven Market,Brookhaven Market,branded-unmatched,1,1.0
+Brothers Marketplace,Brothers Marketplace,branded-unmatched,1,1.0
+Bulk Nation USA,Bulk Nation USA,branded-unmatched,1,1.0
+Bullocks,Bullocks,branded-unmatched,1,1.0
+Buona,Buona,branded-unmatched,1,1.0
+The Old Dutch,The Old Dutch,branded-unmatched,1,1.0
+The Common Market,The Common Market,branded-unmatched,1,1.0
+The Golden Strip Pumpkin Patch,The Golden Strip Pumpkin Patch,branded-unmatched,1,1.0
+The LOCAL Parker,The LOCAL Parker,branded-unmatched,1,1.0
+The Little Store,The Little Store,branded-unmatched,1,1.0
+The Local,The Local,branded-unmatched,1,1.0
+The Local Market,The Local Market,branded-unmatched,1,1.0
+The Market at Lookout,The Market at Lookout,branded-unmatched,1,1.0
+Borden Dairy,Borden Dairy,branded-unmatched,1,1.0
+T G Lee Dairy,T G Lee Dairy,branded-unmatched,1,1.0
+T&T Supermarket 大統華超級市場,T&T Supermarket 大統華超級市場,branded-unmatched,1,1.0
+"TCC, Verizon Authorized Retailer","TCC, Verizon Authorized Retailer",branded-unmatched,1,1.0
+TS Emporium Hispano,TS Emporium Hispano,branded-unmatched,1,1.0
+Taj Grocery1,Taj Grocery1,branded-unmatched,1,1.0
+Tapia Brothers Company,Tapia Brothers Company,branded-unmatched,1,1.0
+Taqueria Taxco,Taqueria Taxco,branded-unmatched,1,1.0
+Tex-Best Travel Centers,Tex-Best Travel Centers,branded-unmatched,1,1.0
+Canyon Market,Canyon Market,branded-unmatched,1,1.0
+Carl's Jr.,Carl's Jr.,branded-unmatched,1,1.0
+Carniceria La Carreta,Carniceria La Carreta,branded-unmatched,1,1.0
+Carousel Supermarket,Carousel Supermarket,branded-unmatched,1,1.0
+Carter's Georgia,Carter's Georgia,branded-unmatched,1,1.0
+Cash Saver-Crossett,Cash Saver-Crossett,branded-unmatched,1,1.0
+Catalent,Catalent,branded-unmatched,1,1.0
+Center Market Baycity,Center Market Baycity,branded-unmatched,1,1.0
+Blue Goose Cantina,Blue Goose Cantina,branded-unmatched,1,1.0
+Blue Nile,Blue Nile,branded-unmatched,1,1.0
+Bluestem USD 205 Schools,Bluestem USD 205 Schools,branded-unmatched,1,1.0
+Bodega Aurrera,Bodega Aurrera,branded-unmatched,1,1.0
+Bodega Sumerca,Bodega Sumerca,branded-unmatched,1,1.0
+Boise Coop Wine Shop,Boise Coop Wine Shop,branded-unmatched,1,1.0
+Transmart,Transmart,branded-unmatched,1,1.0
+Trepco West,Trepco West,branded-unmatched,1,1.0
+Beverage Depot,Beverage Depot,branded-unmatched,1,1.0
+Bi rite,Bi rite,branded-unmatched,1,1.0
+Bi-Rite/Sweet Sage/Remedies Grill,Bi-Rite/Sweet Sage/Remedies Grill,branded-unmatched,1,1.0
+Big Sandy Superstore,Big Sandy Superstore,branded-unmatched,1,1.0
+Bill's Superette,Bill's Superette,branded-unmatched,1,1.0
+Binny's,Binny's,branded-unmatched,1,1.0
+Birdsong Peanuts Newton,Birdsong Peanuts Newton,branded-unmatched,1,1.0
+Bison Food Store,Bison Food Store,branded-unmatched,1,1.0
+Today's Farebrother st,Today's Farebrother st,branded-unmatched,1,1.0
+Tops Market,Tops Market,branded-unmatched,1,1.0
+Torn and Glasser,Torn and Glasser,branded-unmatched,1,1.0
+Tortillas Aries,Tortillas Aries,branded-unmatched,1,1.0
+Tower Market,Tower Market,branded-unmatched,1,1.0
+Town & Country Beauty Salon / Formal Affair,Town & Country Beauty Salon / Formal Affair,branded-unmatched,1,1.0
+Town Talk Foods,Town Talk Foods,branded-unmatched,1,1.0
+Best Bargain 99 Cent,Best Bargain 99 Cent,branded-unmatched,1,1.0
+The Olive Shoppe,The Olive Shoppe,branded-unmatched,1,1.0
+The Point Market,The Point Market,branded-unmatched,1,1.0
+The Still,The Still,branded-unmatched,1,1.0
+Three Bears Alaska Inc.,Three Bears Alaska Inc.,branded-unmatched,1,1.0
+Thrifty Foods,Thrifty Foods,branded-unmatched,1,1.0
+Tillamook Country Smoker,Tillamook Country Smoker,branded-unmatched,1,1.0
+Tim Hortons Southern Tier,Tim Hortons Southern Tier,branded-unmatched,1,1.0
+Tindahan,Tindahan,branded-unmatched,1,1.0
+Zupan's Markets,Zupan's Markets,branded-unmatched,1,1.0
+abc supermarket,abc supermarket,branded-unmatched,1,1.0
+amazing savings HQ,amazing savings HQ,branded-unmatched,1,1.0
+dd's DISCOUNTS,dd's DISCOUNTS,branded-unmatched,1,1.0
+4 Sons Food Stores,4 Sons Food Stores,branded-unmatched,1,1.0
+wineoutlet.com,wineoutlet.com,branded-unmatched,1,1.0
+1st Source Bank,1st Source Bank,branded-unmatched,1,1.0
+ABC Beverages,ABC Beverages,branded-unmatched,1,1.0
+Village Grocer,Village Grocer,branded-unmatched,1,1.0
+Vince's Market,Vince's Market,branded-unmatched,1,1.0
+Vista Quality Market,Vista Quality Market,branded-unmatched,1,1.0
+Wallisville Auto Repair,Wallisville Auto Repair,branded-unmatched,1,1.0
+Water Gourmet of Lawndale,Water Gourmet of Lawndale,branded-unmatched,1,1.0
+Water Street Stations inc,Water Street Stations inc,branded-unmatched,1,1.0
+Wateria,Wateria,branded-unmatched,1,1.0
+600 Degrees Pizzeria & Drafthouse,600 Degrees Pizzeria & Drafthouse,branded-unmatched,1,1.0
+Anne's Place,Anne's Place,branded-unmatched,1,1.0
+Apple Mart,Apple Mart,branded-unmatched,1,1.0
+VVS,VVS,branded-unmatched,1,1.0
+Valley Foods  Supermarket  Ivanhoe,Valley Foods  Supermarket  Ivanhoe,branded-unmatched,1,1.0
+Value Foods Rose City,Value Foods Rose City,branded-unmatched,1,1.0
+Ventura Foods,Ventura Foods,branded-unmatched,1,1.0
+Viking Village Foods,Viking Village Foods,branded-unmatched,1,1.0
+Villa Market,Villa Market,branded-unmatched,1,1.0
+Ambica,Ambica,branded-unmatched,1,1.0
+"American Foods Group, Long Prairie, MN","American Foods Group, Long Prairie, MN",branded-unmatched,1,1.0
+American Made General Store,American Made General Store,branded-unmatched,1,1.0
+"American Rock Salt Company, LLC","American Rock Salt Company, LLC",branded-unmatched,1,1.0
+Americana Grocery,Americana Grocery,branded-unmatched,1,1.0
+Anaya's Market,Anaya's Market,branded-unmatched,1,1.0
+Andy's Market,Andy's Market,branded-unmatched,1,1.0
+Angelo Caputo's Fresh Market,Angelo Caputo's Fresh Market,branded-unmatched,1,1.0
+Market Basket,Market Basket,branded-unmatched,1,1.0
+Marky's Caviar Brooklyn,Marky's Caviar Brooklyn,branded-unmatched,1,1.0
+Martin Fish Co LLC,Martin Fish Co LLC,branded-unmatched,1,1.0
+Martin Oil Company,Martin Oil Company,branded-unmatched,1,1.0
+Los Portales Supermarket,Los Portales Supermarket,branded-unmatched,1,1.0
+Los Tres Hermanos,Los Tres Hermanos,branded-unmatched,1,1.0
+Lover's Lane,Lover's Lane,branded-unmatched,1,1.0
+Lowe's Markets,Lowe's Markets,branded-unmatched,1,1.0
+Woods Grocery,Woods Grocery,branded-unmatched,1,1.0
+Yankee Spirits,Yankee Spirits,branded-unmatched,1,1.0
+Yoder's Country Market,Yoder's Country Market,branded-unmatched,1,1.0
+Main St. Market,Main St. Market,branded-unmatched,1,1.0
+Main Street Market,Main Street Market,branded-unmatched,1,1.0
+Mainely Provisions Kingfield,Mainely Provisions Kingfield,branded-unmatched,1,1.0
+Marc's Restaurant,Marc's Restaurant,branded-unmatched,1,1.0
+Marina Market,Marina Market,branded-unmatched,1,1.0
+Weaver Street Market,Weaver Street Market,branded-unmatched,1,1.0
+West Side Grocery,West Side Grocery,branded-unmatched,1,1.0
+Westborn Market,Westborn Market,branded-unmatched,1,1.0
+Westside Market NYC,Westside Market NYC,branded-unmatched,1,1.0
+White Oak Station Pea Ridge,White Oak Station Pea Ridge,branded-unmatched,1,1.0
+Willow Creek Community Church,Willow Creek Community Church,branded-unmatched,1,1.0
+Willy Street Co-op,Willy Street Co-op,branded-unmatched,1,1.0
+Woodlands Market,Woodlands Market,branded-unmatched,1,1.0
+ABC Stores,ABC Stores,branded-unmatched,1,1.0
+ABC Stores Las Vegas,ABC Stores Las Vegas,branded-unmatched,1,1.0
+ABC-MART,ABC-MART,branded-unmatched,1,1.0
+ACME pizza and wine bar,ACME pizza and wine bar,branded-unmatched,1,1.0
+AJ's Fine Foods,AJ's Fine Foods,branded-unmatched,1,1.0
+Ace Hardware,Ace Hardware,branded-unmatched,1,1.0
+Watermill Express,Watermill Express,branded-unmatched,1,1.0
+We Care Thrift Center,We Care Thrift Center,branded-unmatched,1,1.0
