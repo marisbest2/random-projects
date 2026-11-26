@@ -1,9 +1,9 @@
 """Spot-check the barzonDESIGN "grocery nations" cartoon map against the Overture store data.
 
 For each territory on the graphic we take a rough region (states or a lat/lon box), rank
-banners inside it by store count and by estimated revenue, and see where the claimed
-banner lands. Independents are excluded from the ranking (each is a separate owner) but
-their share of local revenue is reported.
+banners inside it by store count, square footage and estimated revenue, and see where the
+claimed banner lands. Independents are excluded from shares and rankings (each is a
+separate owner).
 
     python spotcheck.py     # needs cache/stores_final.parquet from run.py
 """
@@ -78,7 +78,16 @@ def _region(st: pd.DataFrame, f: dict) -> pd.DataFrame:
     return st[m]
 
 
+METRICS = {"stores": None, "sqft": "sqft", "revenue": "revenue"}
+METRIC_LABEL = {"stores": "Store count", "sqft": "Square footage", "revenue": "Est. revenue"}
+
+
 def check(st: pd.DataFrame) -> pd.DataFrame:
+    """One row per territory: the claimed chain's share, rank and the leader under each metric.
+
+    Shares are of the chain total in the region (independents excluded), so the three
+    metrics are on the same footing as the rankings.
+    """
     st = st.assign(key=_key(st))
     rows = []
     for label, claim, f in CLAIMS:
@@ -86,74 +95,93 @@ def check(st: pd.DataFrame) -> pd.DataFrame:
         chains = r[r["parent"] != "Independent"]
         # a claim can name a banner (King Soopers) or a whole parent (Albertsons, Kroger)
         level = "parent" if claim in set(chains["parent"]) and claim not in set(chains["key"]) else "key"
-        by_n = chains.groupby(level).size().sort_values(ascending=False)
-        by_rev = chains.groupby(level)["revenue"].sum().sort_values(ascending=False)
-        tot_rev = r["revenue"].sum()
-        rank_n = by_n.index.get_loc(claim) + 1 if claim in by_n.index else None
-        rank_rev = by_rev.index.get_loc(claim) + 1 if claim in by_rev.index else None
-        if rank_rev == 1 and rank_n == 1:
-            verdict = "Holds up"
-        elif rank_rev == 1 or rank_n == 1:
-            verdict = "Partly"
-        elif rank_rev and rank_rev <= 3:
-            verdict = "Contender"
+        row = dict(territory=label, claimed=claim, stores_in_region=len(r),
+                   claimed_stores=int((chains[level] == claim).sum()),
+                   independent_store_share=(r["parent"] == "Independent").mean() if len(r) else 0)
+        for m, col in METRICS.items():
+            agg = (chains.groupby(level).size() if col is None else chains.groupby(level)[col].sum()).sort_values(ascending=False)
+            tot = agg.sum()
+            row[f"share_{m}"] = agg.get(claim, 0) / tot if tot else 0
+            row[f"rank_{m}"] = agg.index.get_loc(claim) + 1 if claim in agg.index else None
+            row[f"leader_{m}"] = agg.index[0] if len(agg) else ""
+            row[f"leader_share_{m}"] = agg.iloc[0] / tot if tot else 0
+        leads = sum(row[f"rank_{m}"] == 1 for m in METRICS)
+        row["leads_on"] = leads
+        if leads == 3:
+            row["verdict"] = "Holds up"
+        elif leads >= 1:
+            row["verdict"] = "Partly"
+        elif row["rank_revenue"] and row["rank_revenue"] <= 3:
+            row["verdict"] = "Contender"
         else:
-            verdict = "Doesn't hold"
-        rows.append(dict(
-            territory=label, claimed=claim, stores_in_region=len(r),
-            claimed_stores=int(by_n.get(claim, 0)), rank_by_count=rank_n,
-            leader_by_count=by_n.index[0] if len(by_n) else "", leader_count=int(by_n.iloc[0]) if len(by_n) else 0,
-            claimed_rev_share=by_rev.get(claim, 0) / tot_rev if tot_rev else 0, rank_by_revenue=rank_rev,
-            leader_by_revenue=by_rev.index[0] if len(by_rev) else "",
-            leader_rev_share=by_rev.iloc[0] / tot_rev if len(by_rev) else 0,
-            independent_rev_share=r.loc[r["parent"] == "Independent", "revenue"].sum() / tot_rev if tot_rev else 0,
-            verdict=verdict,
-        ))
+            row["verdict"] = "Doesn't hold"
+        rows.append(row)
     return pd.DataFrame(rows)
 
 
-VERDICT_C = {"Holds up": "#2E7D32", "Partly": "#9CCC65", "Contender": "#F5A623", "Doesn't hold": "#C0392B"}
+VERDICT_C = {"Holds up": "#2E7D32", "Partly": "#B8860B", "Contender": "#D35400", "Doesn't hold": "#C0392B"}
+RANK_C = {1: "#2E7D32", 2: "#F2C230", 3: "#C0392B"}   # 1st / 2nd / 3rd or worse
+
+
+def rank_color(rank) -> str:
+    return RANK_C[1] if rank == 1 else RANK_C[2] if rank == 2 else RANK_C[3]
 
 
 def figure(df: pd.DataFrame, rel: str, fname: str = "08_spotcheck_barzon_map.png"):
+    from matplotlib.lines import Line2D
+    from matplotlib.patches import Patch
+
     d = df.iloc[::-1].reset_index(drop=True)
-    fig, ax = plt.subplots(figsize=(14, 15))
-    fig.subplots_adjust(left=0.30, right=0.97, top=0.9, bottom=0.05)
-    y = np.arange(len(d))
-    ax.barh(y, d["leader_rev_share"] * 100, color="#E4E4E4", height=0.7, label="Revenue leader's share")
-    cols = [VERDICT_C[v] for v in d["verdict"]]
-    ax.barh(y, d["claimed_rev_share"] * 100, color=cols, height=0.7)
+    n = len(d)
+    fig, ax = plt.subplots(figsize=(16, 22))
+    fig.subplots_adjust(left=0.265, right=0.70, top=0.905, bottom=0.04)
+    h = 0.26
+    offs = {"stores": h, "sqft": 0.0, "revenue": -h}
+    for m, off in offs.items():
+        ax.barh(np.arange(n) + off, d[f"share_{m}"] * 100, height=h * 0.9,
+                color=[rank_color(r) for r in d[f"rank_{m}"]], edgecolor="white", linewidth=0.5)
+        # name the three bars once, on the top row
+        ax.text(d[f"share_{m}"].iloc[-1] * 100 + 0.6, n - 1 + off, {"stores": "stores", "sqft": "sq ft", "revenue": "revenue"}[m],
+                va="center", fontsize=8.5, color=SUB)
+        # leader's share as a tick where someone else leads
+        other = d[f"rank_{m}"] != 1
+        ax.scatter(d.loc[other, f"leader_share_{m}"] * 100, (np.arange(n) + off)[other], marker="|", s=130,
+                   color="#333333", linewidths=1.6, zorder=3)
+    # right-hand column: ranks under each metric and who leads where the claim doesn't
+    tx = matplotlib.transforms.blended_transform_factory(ax.transAxes, ax.transData)
+    ax.text(1.02, n - 0.2, "Rank: stores / sq ft / revenue      Verdict", transform=tx, fontsize=10, fontweight="bold", color=INK, va="bottom")
     for yi, row in d.iterrows():
-        if row["rank_by_revenue"] == 1 and row["rank_by_count"] == 1:
-            txt = "leads on revenue and stores"
-        elif row["rank_by_revenue"] == 1:
-            txt = f"leads on revenue · #{row['rank_by_count']} by stores ({row['leader_by_count']} leads)"
-        elif row["rank_by_count"] == 1:
-            txt = f"leads on stores · #{row['rank_by_revenue']} by revenue ({row['leader_by_revenue']} leads)"
-        else:
-            txt = f"#{row['rank_by_revenue'] or '–'} by revenue · {row['leader_by_revenue']} leads"
-        ax.text(max(row["leader_rev_share"], row["claimed_rev_share"]) * 100 + 0.8, yi, txt,
-                va="center", fontsize=9.5, color=SUB)
-    ax.set_yticks(y)
+        ranks = " / ".join(f"#{int(row[f'rank_{m}'])}" if row[f"rank_{m}"] == row[f"rank_{m}"] else "–" for m in METRICS)
+        others = list(dict.fromkeys(row[f"leader_{m}"] for m in METRICS if row[f"rank_{m}"] != 1))
+        ax.text(1.02, yi, ranks, transform=tx, va="center", fontsize=10.5, color=INK, family="DejaVu Sans Mono")
+        ax.text(1.29, yi, row["verdict"], transform=tx, va="center", fontsize=10.5, fontweight="bold",
+                color=VERDICT_C[row["verdict"]])
+        if others:
+            ax.text(1.02, yi - 0.32, "leader: " + ", ".join(others), transform=tx, va="center", fontsize=9, color=SUB)
+    ax.set_yticks(np.arange(n))
     ax.set_yticklabels([f"{t}  ({c})" for t, c in zip(d["territory"], d["claimed"])], fontsize=10.5)
-    ax.set_xlim(0, 100)
-    ax.set_xlabel("Share of estimated grocery revenue in the territory (%)", color=SUB)
-    for s in ("top", "right", "left"):
-        ax.spines[s].set_visible(False)
-    ax.tick_params(axis="y", length=0)
+    ax.set_xlim(0, 70)
+    ax.set_ylim(-0.6, n - 0.4)
+    for yi in range(n):
+        ax.axhline(yi + 0.5, color="#f0f0f0", lw=0.8, zorder=0)
+    ax.set_xlabel("Claimed chain's share of the territory's chain stores / floor space / estimated revenue (%)", color=SUB)
+    for sp in ("top", "right", "left"):
+        ax.spines[sp].set_visible(False)
+    ax.tick_params(axis="y", length=0, pad=8)
     ax.grid(axis="x", color="#eeeeee")
     ax.set_axisbelow(True)
-    n_ok = (df["verdict"] == "Holds up").sum()
-    fig.text(0.02, 0.965, "Fact-checking the grocery-nations cartoon map", fontsize=22, fontweight="bold", color=INK, va="top")
-    fig.text(0.02, 0.935, f"{n_ok} of {len(df)} territories hold up: the claimed chain leads its area by both store count and "
-             "estimated revenue.\nPartly = leads on only one of the two. Contender = top 3 by revenue. "
-             "Bar = claimed chain's revenue share; grey = the leader's.",
-             fontsize=12, color=SUB, va="top")
-    from matplotlib.patches import Patch
-    ax.legend(handles=[Patch(color=c, label=k) for k, c in VERDICT_C.items()] + [Patch(color="#E4E4E4", label="Leader's share")],
-              loc="lower right", frameon=False, fontsize=10.5)
-    fig.text(0.02, 0.012, f"Data: Overture Maps ({rel}). Regions are rough state / lat-lon boxes. "
-             "Independents excluded from rankings.", fontsize=9, color=MUTED)
+    counts = df["verdict"].value_counts()
+    fig.text(0.02, 0.988, "Fact-checking the grocery-nations cartoon map", fontsize=24, fontweight="bold", color=INK, va="top")
+    fig.text(0.02, 0.966, f"{counts.get('Holds up', 0)} of {len(df)} territories hold up: the claimed chain leads its area on stores, "
+             "floor space and estimated revenue.\nPartly = leads on one or two metrics · Contender = top 3 by revenue.\n"
+             "Bars, top to bottom: stores, sq ft, revenue. Colour = the claimed chain's rank on that metric; | = the leader's share.", fontsize=12.5, color=SUB, va="top")
+    handles = [Patch(color=RANK_C[1], label="Ranked 1st"), Patch(color=RANK_C[2], label="Ranked 2nd"),
+               Patch(color=RANK_C[3], label="3rd or lower")]
+    handles.append(Line2D([], [], marker="|", color="#333333", lw=0, markersize=12, markeredgewidth=1.6, label="Leader's share"))
+    fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(0.02, 0.928), ncol=8, frameon=False, fontsize=10.5,
+               handlelength=1.4, columnspacing=1.3)
+    fig.text(0.02, 0.01, f"Data: Overture Maps ({rel}). Regions are rough state / lat-lon boxes. "
+             "Independents excluded from shares and rankings.", fontsize=9, color=MUTED)
     return viz.save(fig, fname)
 
 
@@ -164,8 +192,8 @@ def main():
     df.to_csv(OUT / "spotcheck_barzon_map.csv", index=False)
     figure(df, rel)
     pd.set_option("display.width", 250)
-    print(df[["territory", "claimed", "claimed_stores", "rank_by_count", "leader_by_count", "rank_by_revenue",
-              "leader_by_revenue", "claimed_rev_share", "leader_rev_share", "verdict"]].round(2).to_string(index=False))
+    print(df[["territory", "claimed", "rank_stores", "rank_sqft", "rank_revenue", "leader_stores", "leader_sqft",
+              "leader_revenue", "share_revenue", "verdict"]].round(2).to_string(index=False))
     print(df["verdict"].value_counts().to_dict())
 
 
