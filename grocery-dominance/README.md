@@ -2,6 +2,8 @@
 
 Overture Maps release **2026-11-18.0** · H3 resolution 4 · each hex is coloured by the winner across the hex plus its 6 neighbours (`grid_disk k=1`) · only hexes that contain a store are drawn (3,408 to 3,440 hexes).
 
+![Parent company with the most estimated grocery revenue in each hex](out/02c_parent_by_revenue.png)
+
 ## Run
 
 ```bash
@@ -53,11 +55,80 @@ Every expensive step is cached to `cache/*.parquet`: the places pull, the buildi
    - Ahold Delhaize's Food Lion belt in North Carolina and Virginia wins by count but loses most of it to Walmart on revenue.
    - Albertsons dominates the Mountain West by count, then cedes much of Idaho, Montana and Wyoming.
    - Aldi's few revenue wins (11 hexes) are mostly in northern Minnesota.
-7. **How many independents there are.** About 62% of the store records are unbranded independents. Counted as a single bloc they would win 99% of hexes by count. Each independent therefore competes as its own owner, and tan marks places where no chain outweighs a single local store, mostly the rural Great Plains and Mountain West.
+7. **How many independents there are.** About 62% of the store records are unbranded independents. In the main maps each independent competes as its own owner, and tan marks places where no chain outweighs a single local store, mostly the rural Great Plains and Mountain West. [What if they were one company?](#what-if-every-independent-grocer-were-one-company) shows them pooled.
 
 **Replication (store name, by count).** Safeway (304 hexes), Food Lion (213), Kroger (188), Publix (154), Albertsons (127), IGA (123), H-E-B (112) and Hy-Vee (111) lead. Walmart barely shows (63) for two reasons:
 - Its records are split across "Walmart", "Walmart Supercenter" and "Neighborhood Market".
 - Most Supercenters are tagged `department_store`, which the original category filter excludes.
+
+## The maps
+
+### 1. Replication: most common store name
+
+The original viral method: store name or brand, by count, strict grocery categories only.
+
+![Replication: most common grocery store name per hex](out/01_replication_store_name_count.png)
+
+### 2. Parent company by store count, square footage and revenue
+
+Same palette on all three maps.
+
+![Parent company by store count](out/02a_parent_by_count.png)
+
+![Parent company by square footage](out/02b_parent_by_sqft.png)
+
+![Parent company by estimated revenue](out/02c_parent_by_revenue.png)
+
+### 3. How dominant is the local leader?
+
+Revenue winner, faded where the winner holds a small share of local sales. The middle half of winners hold only 26–42% (median 33%).
+
+![Revenue winner with opacity by share of local sales](out/03_dominance_revenue_share.png)
+
+### 4. What changes hands when you follow the money
+
+Hexes whose winner differs between the count map and the revenue map, coloured by the new winner.
+
+![Hexes that flip from count winner to revenue winner](out/04_flips_count_to_revenue.png)
+
+### 5. Share of hexes won under each metric
+
+![Share of hexes won by parent under each metric](out/05_share_of_hexes_by_metric.png)
+
+### 6. Empires
+
+Each top parent by national revenue: hexes it wins on revenue, hexes where it is present but not top, and the rest in grey.
+
+| | |
+|---|---|
+| ![Walmart](out/06_1_empire_walmart.png) | ![Kroger](out/06_2_empire_kroger.png) |
+| ![Albertsons](out/06_3_empire_albertsons.png) | ![Publix](out/06_4_empire_publix.png) |
+| ![Ahold Delhaize](out/06_5_empire_ahold_delhaize.png) | ![H-E-B](out/06_6_empire_h_e_b.png) |
+| ![Aldi](out/06_7_empire_aldi.png) | ![Meijer](out/06_8_empire_meijer.png) |
+
+## What if every independent grocer were one company?
+
+The main maps let each unbranded store compete on its own, because about 51,000 independents are thousands of separate owners. Here they are pooled into a single "Independent" company instead (`out/hexes_won_independents_as_bloc.csv`).
+
+![Winners when all independents are pooled into one company](out/07_independents_as_one_bloc.png)
+
+| Winner | Count | Sqft | Revenue |
+|---|---:|---:|---:|
+| Independent (pooled) | 3,389 (99%) | 1,948 (57%) | 1,144 (34%) |
+| Walmart | 0 | 1,046 (31%) | **1,297 (38%)** |
+| Kroger | 2 | 26 | 221 |
+| Albertsons | 1 | 70 | 181 |
+| H-E-B | 0 | 30 | 121 |
+| Ahold Delhaize | 0 | 69 | 100 |
+| Hy-Vee | 1 | 19 | 91 |
+| Publix | 0 | 46 | 85 |
+| Meijer | 0 | 8 | 32 |
+
+- **By store count the pooled independents win almost everywhere** (99% of hexes): there are about 1.6 independents for every chain store in the data.
+- **By square footage they still win 57%.** Walmart takes most of the rest.
+- **By revenue Walmart wins more hexes (1,297) than all independents combined (1,144).** The pooled independents keep the rural West and the northern Plains, plus patches of the Midwest and Northeast.
+- **The regional chains barely move.** H-E-B (121 vs 124), Publix (85 vs 93) and Hy-Vee (91 vs 113) hold their cores even against the whole independent sector. Kroger loses about a fifth of its revenue hexes (284 → 221), and Albertsons about half (379 → 181), mostly in the rural Mountain West.
+- Independent revenue is an estimate ($400/sqft, floor area capped at 30k sqft), so read the revenue panel as an upper bound for the independents.
 
 ## Audit (`out/audit_parent_banner_counts.csv`)
 
@@ -124,6 +195,8 @@ Every expensive step is cached to `cache/*.parquet`: the places pull, the buildi
 | `04_flips_count_to_revenue.png` | Hexes that flip from count to revenue (46.7%) |
 | `05_share_of_hexes_by_metric.png` | Bar chart of hexes won per metric |
 | `06_1…06_8_empire_*.png` | Walmart, Kroger, Albertsons, Publix, Ahold Delhaize, H-E-B, Aldi, Meijer |
+| `07_independents_as_one_bloc.png` | Count / sqft / revenue winners with all independents pooled |
+| `hexes_won_independents_as_bloc.csv` | Winner tallies for the pooled-independents scenario |
 | `audit_parent_banner_counts.csv` | Parent / banner / kind record counts |
 | `hexes_won_by_metric.csv`, `share_of_hexes_by_metric.csv` | Winner tallies |
 | `sqft_by_parent.csv` | Store count, reliable-match share and median sqft per parent |

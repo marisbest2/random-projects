@@ -115,8 +115,9 @@ def main():
         w = analysis.hex_winners(st, "owner", wcol)
         w["winner"] = w["winner"].str.replace(r"^Independent:.*$", "Independent", regex=True)
         res[m] = w
-    bloc = analysis.hex_winners(st, "parent")
-    print(f"\n[note] if all independents were one bloc they would win {bloc.winner.eq('Independent').mean():.0%} of hexes by count")
+    # Counterfactual: every independent pooled into one "Independent" company.
+    bloc = {m: analysis.hex_winners(st, "parent", wcol)
+            for m, wcol in (("By store count", None), ("By square footage", "sqft"), ("By est. revenue", "revenue"))}
     ranked = (pd.concat([w["winner"].value_counts() for w in res.values()], axis=1).max(axis=1)
               .sort_values(ascending=False).index.tolist())
     pal = viz.build_palette(ranked, n=14)
@@ -139,6 +140,11 @@ def main():
     _, pct, gained, lost = plots.flips_map(res["By store count"], res["By est. revenue"], pal, states, rel, "04_flips_count_to_revenue.png")
     _, shares = plots.share_bars(res, pal, "05_share_of_hexes_by_metric.png", rel)
     shares.round(2).to_csv(OUT / "share_of_hexes_by_metric.csv")
+
+    _, bloc_counts = plots.bloc_triptych(bloc, pal, states, rel, "07_independents_as_one_bloc.png")
+    bloc_tbl = pd.DataFrame(bloc_counts).fillna(0).astype(int).sort_values("By est. revenue", ascending=False)
+    bloc_tbl.to_csv(OUT / "hexes_won_independents_as_bloc.csv")
+    print("\n[independents as one bloc] hexes won\n" + bloc_tbl.head(12).to_string())
 
     # ---- empires ---------------------------------------------------------------------------
     wr = res["By est. revenue"]

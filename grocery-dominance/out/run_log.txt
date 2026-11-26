@@ -108,7 +108,21 @@ Sedano's Supermarkets           34    2182070.6         1.2           1.0       
 Vallarta Supermarkets           46    2720549.2         1.2           1.0             430.1         59142.4             25.4       
 Festival Foods                  56    3761428.0         1.1           1.0             297.8         67168.4             20.0  CHECK
 
-[note] if all independents were one bloc they would win 99% of hexes by count
+[independents as one bloc] hexes won
+                   By store count  By square footage  By est. revenue
+winner                                                               
+Walmart                         0               1046             1297
+Independent                  3389               1948             1144
+Kroger                          2                 26              221
+Albertsons                      1                 70              181
+H-E-B                           0                 30              121
+Other chains                   13                134              115
+Ahold Delhaize                  0                 69              100
+Hy-Vee                          1                 19               91
+Publix                          0                 46               85
+Meijer                          0                  8               32
+Northeast Grocery               0                  4               12
+IGA                             2                  6                6
 
 [hexes won]
                    By store count  By square footage  By est. revenue  count→revenue

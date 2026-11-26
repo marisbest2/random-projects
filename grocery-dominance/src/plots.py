@@ -163,3 +163,44 @@ def empire(parent: str, color: str, wr: pd.DataFrame, presence: set, all_hexes: 
             y -= 0.045
     viz.footer(fig, SOURCE.format(rel=rel))
     return viz.save(fig, fname)
+
+
+def bloc_triptych(results: dict[str, pd.DataFrame], pal: dict, states, rel: str, fname: str):
+    """Three small maps: winners when every independent store counts as one company."""
+    fig = plt.figure(figsize=(24, 9))
+    fig.text(0.012, 0.97, "What if every independent grocer were one company?", fontsize=27,
+             fontweight="bold", color=INK, va="top")
+    fig.text(0.012, 0.905, "Same maps, but every unbranded store is pooled into a single \"Independent\" bloc "
+             "that competes against the chains", fontsize=14, color=SUB, va="top")
+    counts = {}
+    for i, (m, w) in enumerate(results.items()):
+        ax = fig.add_axes([0.005 + i * 0.332, 0.15, 0.325, 0.66])
+        ax.set_axis_off()
+        ax.set_aspect("equal")
+        keys = viz.bucket(w["winner"], pal)
+        viz.draw_hexes(ax, w["hex"], keys.map(pal), lw=0.2)
+        viz.draw_states(ax, states, lw=0.4)
+        viz.set_extent(ax)
+        vc = keys.value_counts()
+        counts[m] = vc
+        ind = vc.get("Independent", 0) / len(w) * 100
+        raw = w["winner"].value_counts().drop("Independent", errors="ignore")
+        pct = raw.iloc[0] / len(w) * 100 if len(raw) else 0
+        lead = f"{raw.index[0]} {pct:.0f}%" if pct >= 1 else f"{raw.index[0]} <1%"
+        ax.set_title(f"{m}\nIndependents win {ind:.0f}% of hexes · top chain: {lead}",
+                     fontsize=14, color=INK, loc="left", pad=6)
+    # shared horizontal legend: every colour that appears in any panel
+    present = set().union(*[set(v.index) for v in counts.values()])
+    order = [k for k in pal if k in present and k not in ("Other chains", "Independent")]
+    order = ["Independent"] + order + (["Other chains"] if "Other chains" in present else [])
+    lax = fig.add_axes([0.012, 0.045, 0.976, 0.085])
+    lax.set_axis_off()
+    lax.set_xlim(0, 1)
+    lax.set_ylim(0, 1)
+    per_row = 8
+    for j, k in enumerate(order):
+        x, y = (j % per_row) / per_row, 0.75 - (j // per_row) * 0.5
+        lax.add_patch(plt.Rectangle((x, y - 0.13), 0.012, 0.26, facecolor=pal[k], edgecolor="none"))
+        lax.text(x + 0.017, y, k, fontsize=12.5, color=INK, va="center")
+    fig.text(0.012, 0.012, SOURCE.format(rel=rel), fontsize=9.5, color=MUTED)
+    return viz.save(fig, fname), counts
