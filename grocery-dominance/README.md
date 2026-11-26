@@ -12,6 +12,7 @@ cd src
 python run.py --skip-buildings   # fast pass (~30 s): typical store sizes, no footprint join
 python run_buildings.py          # one-off footprint scan (~5 min, cached)
 python run.py                    # full run; --indep-per-sqft 400 sets the flat rate
+python spotcheck.py              # cartoon-map spot check (uses run.py's cache)
 ```
 
 Every expensive step is cached to `cache/*.parquet`: the places pull, the building row-group index, building candidates, store→building matches and the hex winners.
@@ -130,6 +131,77 @@ The main maps let each unbranded store compete on its own, because about 51,000 
 - **The regional chains barely move.** H-E-B (121 vs 124), Publix (85 vs 93) and Hy-Vee (91 vs 113) hold their cores even against the whole independent sector. Kroger loses about a fifth of its revenue hexes (284 → 221), and Albertsons about half (379 → 181), mostly in the rural Mountain West.
 - Independent revenue is an estimate ($400/sqft, floor area capped at 30k sqft), so read the revenue panel as an upper bound for the independents.
 
+## Spot-checking the "grocery nations" cartoon map
+
+A [cartoon map by @JoshuaBarzon (barzonDESIGN)](https://x.com/JoshuaBarzon/status/2100583484293050584/photo/1) went around giving each part of the US to a grocery chain ("Krogervania", "The People's Republic of Hy-Vee", "The Great Southern Publix Empire"…). `src/spotcheck.py` checks 36 of its lower-48 territories against this data.
+
+**Method.** Each territory gets a rough region: a set of states, sometimes cut with a lat/lon box (Austin for the Whole Foods Resistance, Chicagoland for Jewel-Osco, west Michigan for Meijer, and so on). Within the region, banners are ranked by store count and by estimated revenue. Independents are left out of the ranking, since each is a separate owner. A claim **holds up** if the named chain leads on both, is **partly** right if it leads on one, is a **contender** if it is top 3 by revenue, and **doesn't hold** otherwise. Results are in `out/spotcheck_barzon_map.csv`.
+
+![Fact-check of the grocery-nations cartoon map](out/08_spotcheck_barzon_map.png)
+
+**Scorecard: 8 hold up, 13 partly, 6 contenders, 9 don't hold.**
+
+- **Nailed it:** Publix (Florida and Georgia), Fry's (Phoenix), Schnucks (St. Louis), Giant Eagle (western Pennsylvania), ShopRite (New Jersey), Stop & Shop (Connecticut and Rhode Island), Safeway (Oregon and northern California) and Walmart in Arkansas.
+- **Right brand, wrong metric.** Most "partly" verdicts are the same story as the main maps: the cartoon's chain has the most stores, but Walmart takes more money. That covers Hy-Vee, Kroger in the Ohio Valley, Food Lion, Albertsons in the Mountain West, Piggly Wiggly, Weis and Aldi in central Illinois. In the other direction, King Soopers, H-E-B, Jewel-Osco, Wegmans and Meijer lead on revenue but not on store count, where Safeway, Walmart, Aldi, Tops and Family Fare have more locations.
+- **Maine and New Hampshire look swapped.** The cartoon gives Maine to Market Basket and a sliver (New Hampshire) to Hannaford. The data says the reverse: Hannaford leads Maine, and Market Basket leads New Hampshire on revenue.
+- **Clear misses:**
+  - **Vermont:** Shaw's, not Price Chopper.
+  - **Oklahoma:** Walmart, with Homeland 5th by revenue.
+  - **Austin:** H-E-B, with Whole Foods 4th.
+  - **The El Paso / border strip:** Walmart, with El Super 5th.
+  - **South Carolina:** Walmart; Harris Teeter is 4th.
+- **Cultural, not statistical.** Several territories are jokes about loyalty rather than market share: the Whole Foods Resistance in Austin (Whole Foods' headquarters), the Fareway Resistance and the Trader Joe's Commune.
+
+<details>
+<summary>All 36 territories</summary>
+
+| Territory | Claimed | Rank by stores | Rank by revenue | Revenue leader (share) | Verdict |
+|---|---|---:|---:|---|---|
+| The Pacific Empire of Safeway | Safeway | 1 | 1 | Safeway (17%) | ✅ Holds up |
+| The Free State of Fred Meyer | Fred Meyer | 5 | 4 | Safeway (21%) | ❌ Doesn't hold |
+| WinCo Demilitarized Zone | WinCo | 3 | 3 | Albertsons (32%) | 🟠 Contender |
+| The Grand Dominion of Albertsons | Albertsons | 1 | 2 | Walmart (24%) | 🟡 Partly |
+| The Trader Joe's Commune | Trader Joe's | 15 | 18 | Ralphs (12%) | ❌ Doesn't hold |
+| The Dynasty of Fry's | Fry's | 1 | 1 | Fry's (31%) | ✅ Holds up |
+| República de El Super | El Super | 12 | 5 | Walmart (26%) | ❌ Doesn't hold |
+| King Sooperstan | King Soopers | 2 | 1 | King Soopers (27%) | 🟡 Partly |
+| The Northern Cash Wise Territory | Cash Wise | 3 | 3 | Walmart (45%) | 🟠 Contender |
+| The People's Republic of Hy-Vee | Hy-Vee | 1 | 2 | Walmart (25%) | 🟡 Partly |
+| The Fareway Resistance | Fareway | 1 | 2 | Hy-Vee (54%) | 🟡 Partly |
+| The Sultanate of Dillons | Dillons | 3 | 2 | Walmart (39%) | 🟠 Contender |
+| Homeland Reservation | Homeland Stores | 4 | 5 | Walmart (47%) | ❌ Doesn't hold |
+| The Greater H-E-B Republic | H-E-B | 2 | 1 | H-E-B (31%) | 🟡 Partly |
+| The Whole Foods Resistance (Austin) | Whole Foods | 4 | 4 | H-E-B (55%) | ❌ Doesn't hold |
+| The Formerly Glorious State of Walmart | Walmart | 1 | 1 | Walmart (47%) | ✅ Holds up |
+| The Southern Rouses Parish | Rouses | 2 | 2 | Walmart (32%) | 🟠 Contender |
+| The Piggly Wiggly Confederacy | Piggly Wiggly | 1 | 3 | Walmart (39%) | 🟡 Partly |
+| The Great Southern Publix Empire | Publix | 1 | 1 | Publix (32%) | ✅ Holds up |
+| The Harris Teeter Protectorate | Harris Teeter | 8 | 4 | Walmart (32%) | ❌ Doesn't hold |
+| Winn-Dixie Disputed Territory | Winn-Dixie | 2 | 3 | Walmart (31%) | 🟠 Contender |
+| The Food Lion Autonomous Zone | Food Lion | 1 | 2 | Walmart (22%) | 🟡 Partly |
+| Krogervania | Kroger | 1 | 2 | Walmart (26%) | 🟡 Partly |
+| Meijer Free State | Meijer | 3 | 1 | Meijer (30%) | 🟡 Partly |
+| Jewel-Osco Kingdom | Jewel-Osco | 2 | 1 | Jewel-Osco (27%) | 🟡 Partly |
+| The ALDI Cartel | Aldi | 1 | 5 | Walmart (24%) | 🟡 Partly |
+| Canton of Schnucks | Schnucks | 1 | 1 | Schnucks (35%) | ✅ Holds up |
+| Pick 'n Save Nation | Pick 'n Save | 3 | 2 | Walmart (26%) | 🟠 Contender |
+| The Giant Eagle Federation | Giant Eagle | 1 | 1 | Giant Eagle (31%) | ✅ Holds up |
+| The Sovereign Wegmans Nation | Wegmans | 3 | 1 | Wegmans (28%) | 🟡 Partly |
+| The Order of Price Chopper | Price Chopper | 3 | 4 | Shaw's (15%) | ❌ Doesn't hold |
+| The Grand Hannaford Duchy | Hannaford | 2 | 4 | Market Basket (27%) | ❌ Doesn't hold |
+| Market Basket Kingdom | Market Basket | 6 | 4 | Hannaford (25%) | ❌ Doesn't hold |
+| The Holy Order of Stop & Shop | Stop & Shop | 1 | 1 | Stop & Shop (22%) | ✅ Holds up |
+| The ShopRite Separatist State | ShopRite | 1 | 1 | ShopRite (25%) | ✅ Holds up |
+| The Royal Council of Weis (central PA) | Weis | 1 | 2 | Walmart (23%) | 🟡 Partly |
+
+</details>
+
+**Caveats specific to this check:**
+- The regions are my reading of a hand-drawn map, so a different box can change a verdict.
+- Overture undercounts some chains: Trader Joe's (about a third of stores listed) and Fred Meyer. Those two are judged harshly.
+- Costco (warehouse clubs are excluded), Carrs (Alaska) and Foodland (Hawaii) can't be checked with this data. Neither can the hatched Sprouts area or "Smithsylvania".
+- Revenue rankings inherit every caveat of the revenue model below, especially Walmart's grocery-only estimate.
+
 ## Audit (`out/audit_parent_banner_counts.csv`)
 
 - **Records:** 100,177 candidate places → 84,768 after exclusions → 82,649 stores after de-duplicating chain records within about 350 m.
@@ -197,6 +269,7 @@ The main maps let each unbranded store compete on its own, because about 51,000 
 | `06_1…06_8_empire_*.png` | Walmart, Kroger, Albertsons, Publix, Ahold Delhaize, H-E-B, Aldi, Meijer |
 | `07_independents_as_one_bloc.png` | Count / sqft / revenue winners with all independents pooled |
 | `hexes_won_independents_as_bloc.csv` | Winner tallies for the pooled-independents scenario |
+| `08_spotcheck_barzon_map.png`, `spotcheck_barzon_map.csv` | Fact-check of the grocery-nations cartoon map |
 | `audit_parent_banner_counts.csv` | Parent / banner / kind record counts |
 | `hexes_won_by_metric.csv`, `share_of_hexes_by_metric.csv` | Winner tallies |
 | `sqft_by_parent.csv` | Store count, reliable-match share and median sqft per parent |
