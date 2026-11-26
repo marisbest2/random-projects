@@ -23,30 +23,63 @@ pd.set_option("display.width", 200)
 pd.set_option("display.max_rows", 100)
 
 
+# Display fixes for brand strings that Overture gets wrong or shouts.
+NAME_ALIASES = {"Shoprite South Africa": "ShopRite", "TOPs Friendly Markets": "Tops Friendly Markets", "ALDI": "Aldi",
+                "Hannaford Supermarkets": "Hannaford", "Fareway Stores": "Fareway", "Harps Food Stores": "Harps"}
+REPLICATION_COLOURS = 80
+
+
+def name_key(raw: pd.Series) -> pd.Series:
+    """Light normalisation so spelling variants of one name count together.
+
+    'Save-A-Lot' = 'Save A Lot', 'Piggly Wiggly - Midlands' = 'Piggly Wiggly',
+    'Super 1 Foods Fuel Center' = 'Super 1 Foods', 'Ridley's Market-Spring Creek' = 'Ridley's Market'.
+    """
+    s = raw.fillna("").str.replace("\u2019", "'", regex=False)
+    s = s.str.replace(r"\s+-\s+.*$", "", regex=True)                       # "X - Location"
+    s = s.str.replace(r"^(\S+\s+\S+.*?)-(?=[A-Z]).*$", r"\1", regex=True)  # "Two Words-Location" (keeps Winn-Dixie)
+    s = s.str.replace(r"\s+\S+ county, \w\w$", "", regex=True, case=False)  # "Food Giant Muhlenberg County, Ky"
+    s = s.str.replace(r"\s+#?\d+$", "", regex=True)
+    s = s.str.lower().str.replace(r"\s+(fuel center|liquor|pharmacy|bakery|deli|gas)$", "", regex=True)
+    s = s.str.replace(r"[-.']", " ", regex=True).str.replace(r"\s+", " ", regex=True).str.strip()
+    return s
+
+
 def replication(pl: pd.DataFrame, states, rel: str):
     """Step 2: faithful recreation - strict grocery categories, store name/brand, by count."""
+    import palette
+
     df = pl[pl["strict"]].copy()
-    raw = df["brand"].fillna(df["name"]).fillna("")
-    key = raw.str.lower().str.replace("’", "'", regex=False)
-    key = key.str.replace(r"\s+#?\d+$", "", regex=True).str.replace(r"\s+", " ", regex=True).str.strip()
+    raw = df["brand"].fillna(df["name"]).fillna("").str.replace("\u2019", "'", regex=False)
+    key = name_key(raw)
     df["key"] = key
-    label = raw.groupby(key).agg(lambda s: s.value_counts().index[0])
+    # label = most common cleaned spelling within the key
+    clean = raw.str.replace(r"\s+-\s+.*$", "", regex=True).str.replace(r"^(\S+\s+\S+.*?)-(?=[A-Z]).*$", r"\1", regex=True)
+    clean = clean.str.replace(r"(?i)\s+\S+ county, \w\w$", "", regex=True).str.replace(r"\s+#?\d+$", "", regex=True)
+    clean = clean.str.replace(r"(?i)\s+(fuel center|liquor|pharmacy|bakery|deli|gas)$", "", regex=True).str.strip()
+    label = clean.groupby(key).agg(lambda s: s.value_counts().index[0]).replace(NAME_ALIASES)
     df = analysis.add_cells(df)
     w = analysis.hex_winners(df, "key")
     w["winner"] = w["winner"].map(label)
-    ranked = w["winner"].value_counts().index.tolist()
-    extra = {k: viz.BRAND[p] for k in ranked
-             for p in viz.BRAND if re.fullmatch(re.escape(p.lower()) + r"( .*)?", k.lower())}
-    extra.update({"Walmart Supercenter": "#5FA8E8", "Walmart Neighborhood Market": "#9CC9F0", "Food Lion": "#7B3F98",
+    # brand colours where a name clearly belongs to a known chain
+    brand = {}
+    for k in w["winner"].unique():
+        for p in viz.BRAND:
+            if re.fullmatch(re.escape(p.lower()) + r"( .*)?", k.lower()):
+                brand[k] = viz.BRAND[p]
+    brand.update({"Walmart Supercenter": "#5FA8E8", "Walmart Neighborhood Market": "#9CC9F0", "Food Lion": "#7B3F98",
                   "Safeway": "#00A3A1", "Stop & Shop": "#9B59B6", "Winn-Dixie": "#B5122A", "Kroger": "#14306E",
-                  "Brookshire's": "#8E5A2B", "Harps Food Stores": "#4A148C", "United Supermarkets": "#66BB6A"})
-    pal = viz.build_palette(ranked, n=14, extra=extra)
+                  "Brookshire's": "#8E5A2B", "Harps": "#4A148C", "United Supermarkets": "#66BB6A", "Aldi": "#F39C12",
+                  "Hannaford": "#7B3F98", "Fareway": "#7A8B2B"})
+    pal = palette.adjacency_palette(w, REPLICATION_COLOURS, brand, {"Other chains": viz.OTHER_C})
     w.to_parquet(CACHE / "winners_replication.parquet")
+    named = viz.bucket(w["winner"], pal).ne("Other chains").mean()
     p = plots.winner_map(
         w, pal, states,
         "America's grocery map, by store name",
-        f"Most common grocery store name/brand in each hex and its 6 neighbours · {len(df):,} stores · {len(w):,} hexes",
-        "01_replication_store_name_count.png", rel)
+        f"Most common grocery store name/brand in each hex and its 6 neighbours · {len(df):,} stores · {len(w):,} hexes "
+        f"· top {REPLICATION_COLOURS} names cover {named:.0%} of the map",
+        "01_replication_store_name_count.png", rel, legend_cols=3, other_label="Other names")
     return w, p
 
 

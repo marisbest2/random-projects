@@ -148,4 +148,4 @@ Save A Lot                     58                  6                0           
 gained: {'Walmart': 1125, 'Kroger': 112, 'Other chains': 111, 'Hy-Vee': 58, 'Meijer': 55, 'H-E-B': 48, 'Albertsons': 45, 'Independent': 20}
 lost: {'Other chains': 528, 'Aldi': 202, 'Albertsons': 169, 'Ahold Delhaize': 149, 'IGA': 144, 'Piggly Wiggly': 129, 'Kroger': 60, 'Save A Lot': 58}
 
-[replication] top store names: {'Safeway': 304, 'Food Lion': 213, 'Kroger': 188, 'Publix': 154, 'Albertsons': 127, 'IGA': 123, 'H-E-B': 112, 'Hy-Vee': 111, "Brookshire's": 70, 'ALDI': 68}
+[replication] top store names: {'Safeway': 303, 'Food Lion': 211, 'Kroger': 168, 'Piggly Wiggly': 166, 'Publix': 140, 'Albertsons': 126, 'Hy-Vee': 112, 'H-E-B': 112, 'IGA': 103, 'Save A Lot': 97}

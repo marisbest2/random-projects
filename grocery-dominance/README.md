@@ -58,7 +58,7 @@ Every expensive step is cached to `cache/*.parquet`: the places pull, the buildi
    - Aldi's few revenue wins (11 hexes) are mostly in northern Minnesota.
 7. **How many independents there are.** About 62% of the store records are unbranded independents. In the main maps each independent competes as its own owner, and tan marks places where no chain outweighs a single local store, mostly the rural Great Plains and Mountain West. [What if they were one company?](#what-if-every-independent-grocer-were-one-company) shows them pooled.
 
-**Replication (store name, by count).** Safeway (304 hexes), Food Lion (213), Kroger (188), Publix (154), Albertsons (127), IGA (123), H-E-B (112) and Hy-Vee (111) lead. Walmart barely shows (63) for two reasons:
+**Replication (store name, by count).** Safeway (303 hexes), Food Lion (211), Kroger (168), Piggly Wiggly (166), Publix (140), Albertsons (126), Hy-Vee (112), H-E-B (112), IGA (103) and Save A Lot (97) lead. Walmart barely shows (58) for two reasons:
 - Its records are split across "Walmart", "Walmart Supercenter" and "Neighborhood Market".
 - Most Supercenters are tagged `department_store`, which the original category filter excludes.
 
@@ -66,7 +66,9 @@ Every expensive step is cached to `cache/*.parquet`: the places pull, the buildi
 
 ### 1. Replication: most common store name
 
-The original viral method: store name or brand, by count, strict grocery categories only.
+The original viral method: store name or brand, by count, strict grocery categories only. Spelling variants of a name are merged ("Save-A-Lot" = "Save A Lot", "Piggly Wiggly - Midlands" = "Piggly Wiggly", "Super 1 Foods Fuel Center" = "Super 1 Foods").
+
+The top 80 names each get their own colour, covering 87% of the map; the remaining 459 hexes are won by names that take only a handful of hexes each. Colours are assigned so that names whose territories touch are never given similar colours (CIELAB distance), using a brand colour where it doesn't clash (`src/palette.py`).
 
 ![Replication: most common grocery store name per hex](out/01_replication_store_name_count.png)
 

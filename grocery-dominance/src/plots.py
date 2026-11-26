@@ -12,9 +12,13 @@ SOURCE = "Data: Overture Maps Foundation places & buildings ({rel}); Census cb_2
 
 
 def winner_map(w: pd.DataFrame, pal: dict, states, headline: str, subtitle: str, fname: str, rel: str,
-               legend_title: str = "Hexes won", alpha_by_share: bool = False):
+               legend_title: str = "Hexes won", alpha_by_share: bool = False, legend_cols: int = 1,
+               other_label: str = "Other chains"):
     keys = viz.bucket(w["winner"], pal)
-    fig, ax, lax = viz.new_map(headline, subtitle)
+    if legend_cols > 1:
+        fig, ax, lax = viz.new_map(headline, subtitle, figsize=(24, 11), legend_w=0.44)
+    else:
+        fig, ax, lax = viz.new_map(headline, subtitle)
     alphas = None
     if alpha_by_share:
         alphas = share_alpha(w["share"].values)
@@ -24,8 +28,12 @@ def winner_map(w: pd.DataFrame, pal: dict, states, headline: str, subtitle: str,
     counts = keys.value_counts()
     order = [k for k in pal if k not in ("Independent", "Other chains") and counts.get(k, 0) > 0]
     order = sorted(order, key=lambda k: -counts[k]) + [k for k in ("Other chains", "Independent") if counts.get(k, 0) > 0]
-    rows = [(k, pal[k], f"{counts[k]:,}") for k in order]
-    y = viz.legend_rows(lax, rows, legend_title)
+    rows = [(other_label if k == "Other chains" else k, pal[k], f"{counts[k]:,}") for k in order]
+    if legend_cols > 1:
+        rows = [((lab[:23] + "…") if len(lab) > 24 else lab, c, v) for lab, c, v in rows]
+        y = viz.legend_grid(lax, rows, legend_title, ncols=legend_cols, fontsize=10 if legend_cols < 3 else 9.5)
+    else:
+        y = viz.legend_rows(lax, rows, legend_title)
     if alpha_by_share:
         _share_ramp(lax, y - 0.02)
     viz.footer(fig, SOURCE.format(rel=rel))

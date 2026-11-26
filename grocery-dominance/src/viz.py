@@ -106,9 +106,10 @@ def bucket(keys: pd.Series, pal: dict) -> pd.Series:
 L48_EXTENT = (-2_380_000, 2_290_000, 230_000, 3_200_000)
 
 
-def new_map(headline: str, subtitle: str, legend: bool = True, figsize=(16, 9.6)):
+def new_map(headline: str, subtitle: str, legend: bool = True, figsize=(16, 9.6), legend_w: float = 0.195):
     fig = plt.figure(figsize=figsize)
-    map_w = 0.75 if legend else 0.98
+    legend_x = 1 - legend_w - 0.01
+    map_w = legend_x - 0.045 if legend else 0.98
     ax = fig.add_axes([0.01, 0.04, map_w, 0.80])
     ax.set_axis_off()
     ax.set_aspect("equal")
@@ -116,7 +117,7 @@ def new_map(headline: str, subtitle: str, legend: bool = True, figsize=(16, 9.6)
     fig.text(0.02, 0.895, subtitle, fontsize=13, color=SUB, va="top", ha="left")
     lax = None
     if legend:
-        lax = fig.add_axes([0.795, 0.06, 0.195, 0.78])
+        lax = fig.add_axes([legend_x, 0.06, legend_w, 0.78])
         lax.set_axis_off()
         lax.set_xlim(0, 1)
         lax.set_ylim(0, 1)
@@ -152,6 +153,23 @@ def legend_rows(lax, rows: list[tuple[str, str, str]], title: str, top: float = 
         lax.text(1.0, y, val, fontsize=11.5, color=SUB, va="center", ha="right")
         y -= row_h
     return y
+
+
+def legend_grid(lax, rows: list[tuple[str, str, str]], title: str, ncols: int = 2, top: float = 0.98,
+                fontsize: float = 10.5):
+    """Multi-column legend (filled column by column) for maps with many named winners."""
+    lax.text(0.0, top, title, fontsize=12.5, fontweight="bold", color=INK, va="top")
+    per_col = int(np.ceil(len(rows) / ncols))
+    row_h = min(0.052, (top - 0.08) / max(per_col, 1))
+    col_w = 1.0 / ncols
+    sw = 0.06 * (2 / ncols) * 0.9
+    for i, (label, color, val) in enumerate(rows):
+        c, r = divmod(i, per_col)
+        x0, y = c * col_w, top - 0.065 - r * row_h
+        lax.add_patch(Rectangle((x0, y - row_h * 0.32), sw, row_h * 0.64, facecolor=color, edgecolor="none"))
+        lax.text(x0 + sw + 0.012, y, label, fontsize=fontsize, color=INK, va="center")
+        lax.text(x0 + col_w - 0.025, y, val, fontsize=fontsize - 0.5, color=SUB, va="center", ha="right")
+    return top - 0.065 - per_col * row_h
 
 
 def footer(fig, text: str):
