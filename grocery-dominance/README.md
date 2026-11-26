@@ -2,6 +2,8 @@
 
 Overture Maps release **2026-11-18.0** · H3 resolution 4 · each hex is coloured by the winner across the hex plus its 6 neighbours (`grid_disk k=1`) · only hexes that contain a store are drawn (3,408 to 3,440 hexes).
 
+**[Explore the interactive map →](https://marisbest2.github.io/random-projects/grocery-dominance/)** Hover any hex for the top three chains, switch between store name, stores, floor space and estimated sales, or click a chain to see its territory.
+
 ![Parent company with the most estimated grocery revenue in each hex](out/02c_parent_by_revenue.png)
 
 ## Run
@@ -13,6 +15,7 @@ python run.py --skip-buildings   # fast pass (~30 s): typical store sizes, no fo
 python run_buildings.py          # one-off footprint scan (~5 min, cached)
 python run.py                    # full run; --indep-per-sqft 400 sets the flat rate
 python spotcheck.py              # cartoon-map spot check (uses run.py's cache)
+python interactive.py            # rebuild the interactive map in /docs/grocery-dominance (GitHub Pages)
 ```
 
 Every expensive step is cached to `cache/*.parquet`: the places pull, the building row-group index, building candidates, store→building matches and the hex winners.

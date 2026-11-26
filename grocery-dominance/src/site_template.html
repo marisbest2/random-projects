@@ -1,0 +1,350 @@
+<title>Grocery Territory Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Which grocery chain leads each part of the US, by store name, store count, floor space and estimated sales. Hover any hex for the top three.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* Layout: masthead + view switcher, then the map with a legend rail (stacks under the map on phones). */
+:root {
+  --bg: #f5f7f4;          /* page: cool off-white with a produce-aisle green bias */
+  --panel: #ffffff;
+  --fg: #18201b;
+  --muted: #5b675f;
+  --line: #d9dfda;
+  --accent: #1f7a4d;      /* shelf-tag green */
+  --dim: #e4e8e4;         /* hexes outside a highlight / unchanged */
+  --hex-edge: #ffffff;
+  --state: rgba(24, 32, 27, .62);
+  --tip-bg: #ffffff;
+  --shadow: 0 6px 24px rgba(20, 30, 24, .14);
+  --display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111513; --panel: #181d1a; --fg: #e6ebe7; --muted: #98a39c; --line: #2a312d;
+    --accent: #4cc38a; --dim: #262c28; --hex-edge: #111513; --state: rgba(230, 235, 231, .55);
+    --tip-bg: #1d2320; --shadow: 0 6px 24px rgba(0, 0, 0, .5); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111513; --panel: #181d1a; --fg: #e6ebe7; --muted: #98a39c; --line: #2a312d;
+  --accent: #4cc38a; --dim: #262c28; --hex-edge: #111513; --state: rgba(230, 235, 231, .55);
+  --tip-bg: #1d2320; --shadow: 0 6px 24px rgba(0, 0, 0, .5); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 32px;
+}
+.wrap { max-width: 1400px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+header { display: flex; flex-direction: column; gap: 6px; }
+.eyebrow { font: 600 12px/1 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+h1 { font: 700 clamp(26px, 4vw, 40px)/1.1 var(--display); margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+.lede { margin: 0; color: var(--muted); max-width: 70ch; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; padding: 4px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+.tabs button {
+  font: 500 13.5px/1 var(--body); color: var(--muted); background: transparent; border: 0; border-radius: 7px;
+  padding: 9px 12px; cursor: pointer;
+}
+.tabs button:hover { color: var(--fg); }
+.tabs button[aria-selected="true"] { background: var(--accent); color: var(--panel); }
+.tabs button:focus-visible, .legend button:focus-visible, .toggle input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.toggle { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--muted); cursor: pointer; }
+.toggle input { accent-color: var(--accent); width: 16px; height: 16px; }
+.viewnote { margin: 0; font-size: 14px; color: var(--muted); max-width: 90ch; min-height: 2.6em; }
+.stage { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 18px; align-items: start; }
+.mapbox { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 10px; min-width: 0; }
+svg.map { display: block; width: 100%; height: auto; touch-action: manipulation; }
+svg.map path.h { stroke: var(--hex-edge); stroke-width: .7; cursor: crosshair; }
+svg.map path.h.hot { stroke: var(--fg); stroke-width: 1.6; }
+svg.map .states { fill: none; stroke: var(--state); stroke-width: .7; pointer-events: none; }
+.status { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 14px; }
+.tip {
+  position: absolute; z-index: 5; pointer-events: none; width: 260px; max-width: calc(100% - 20px);
+  background: var(--tip-bg); color: var(--fg); border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: var(--shadow); padding: 12px 13px; font-size: 13px; line-height: 1.35;
+}
+.tip .where { font: 600 11px/1 var(--body); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.tip .rows { display: flex; flex-direction: column; gap: 7px; }
+.tip .row { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 8px; align-items: center; }
+.tip .row .sw { width: 12px; height: 12px; border-radius: 3px; }
+.tip .row .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tip .row.lead .nm { font-weight: 600; }
+.tip .row .pc { font-variant-numeric: tabular-nums; color: var(--muted); }
+.tip .bar { grid-column: 2 / 4; height: 4px; background: var(--dim); border-radius: 2px; overflow: hidden; margin-top: -3px; }
+.tip .bar i { display: block; height: 100%; }
+.tip .foot { margin-top: 9px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+.legend { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.legend h2 { font: 700 15px/1.2 var(--display); margin: 0; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.legend h2 small { font: 500 12px var(--body); color: var(--muted); }
+.legend .hint { margin: 0; font-size: 12px; color: var(--muted); }
+.legend ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; max-height: 560px; overflow-y: auto; }
+.legend li button {
+  width: 100%; display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; gap: 9px; align-items: center;
+  padding: 5px 6px; border: 0; border-radius: 6px; background: transparent; color: var(--fg);
+  font: 400 13px/1.25 var(--body); text-align: left; cursor: pointer;
+}
+.legend li button:hover { background: var(--dim); }
+.legend li button[aria-pressed="true"] { background: var(--dim); font-weight: 600; }
+.legend .sw { width: 14px; height: 14px; border-radius: 3px; }
+.legend .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.legend .ct { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 12px; }
+.legend .clear { align-self: flex-start; font: 500 12.5px var(--body); color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; }
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px 28px; font-size: 13.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+.notes h3 { font: 700 13px/1.2 var(--display); color: var(--fg); margin: 0 0 4px; text-transform: uppercase; letter-spacing: .05em; }
+.notes p { margin: 0; }
+.notes a { color: var(--accent); }
+@media (max-width: 860px) {
+  .stage { grid-template-columns: minmax(0, 1fr); }
+  .legend ul { max-height: 320px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  svg.map path.h { transition: fill .25s ease; }
+}
+</style>
+<!--BODY-->
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Overture Maps · H3 hexes · lower 48</span>
+    <h1>Who owns your grocery aisle?</h1>
+    <p class="lede">Each hex shows the grocery chain that leads it and its six neighbours. Switch what "leads" means, hover a hex for the top three, or pick a chain to see its territory.</p>
+  </header>
+  <div class="controls">
+    <div class="tabs" role="tablist" aria-label="What to measure" id="tabs"></div>
+    <label class="toggle" for="shade"><input type="checkbox" id="shade"> Fade hexes where the leader's share is small</label>
+  </div>
+  <p class="viewnote" id="viewnote"></p>
+  <div class="stage">
+    <div class="mapbox" id="mapbox">
+      <svg class="map" id="map" role="img" aria-label="Hex map of the lower 48 states coloured by leading grocery chain"></svg>
+      <div class="status" id="status">Loading 3,400 hexes…</div>
+      <div class="tip" id="tip" hidden></div>
+    </div>
+    <aside class="legend" aria-label="Legend">
+      <h2><span id="legend-title">Hexes won</span><small id="legend-total"></small></h2>
+      <p class="hint">Click a name to highlight its territory.</p>
+      <button class="clear" id="clear" type="button" hidden>Show all chains</button>
+      <ul id="legend"></ul>
+    </aside>
+  </div>
+  <section class="notes">
+    <div><h3>How a hex is won</h3><p>The US is cut into H3 resolution-4 hexes (about 680 sq mi each). A hex goes to whoever leads across the hex plus its six neighbours. Only hexes with at least one grocery store are drawn.</p></div>
+    <div><h3>The measures</h3><p>Store names and parents come from Overture Maps places. Floor space is each store's building footprint. Estimated sales spread each chain's latest US grocery revenue across its stores by floor space; independents get $400 per sq ft.</p></div>
+    <div><h3>Independents</h3><p>About 62% of store records are unbranded independents. On the parent maps each competes as its own owner, so tan marks places where no chain beats a single local store. The "Independents pooled" view treats them as one company.</p></div>
+    <div><h3>Source &amp; code</h3><p>Data: Overture Maps Foundation, release <span id="rel">2026-11-18.0</span>, and Census state outlines. Code, caveats and static maps: <a href="https://github.com/marisbest2/random-projects/tree/main/grocery-dominance" target="_blank" rel="noopener">github.com/marisbest2/random-projects</a>.</p></div>
+  </section>
+</div>
+<script>
+(() => {
+  const VIEWS = [
+    { id: "names", tab: "Store name", unit: "of nearby stores",
+      note: "The original viral map: the most common store name or brand in each hex and its neighbours, counted by stores." },
+    { id: "count", tab: "Parent · stores", unit: "of nearby stores",
+      note: "Store names rolled up to parent companies (Ralphs and King Soopers count as Kroger), counted by stores." },
+    { id: "sqft", tab: "Parent · floor space", unit: "of nearby floor space",
+      note: "The parent with the most grocery floor space nearby, from Overture building footprints. Big-box stores count for more." },
+    { id: "revenue", tab: "Parent · est. sales", unit: "of nearby est. sales",
+      note: "The parent with the most estimated grocery sales nearby: each chain's US grocery revenue spread over its stores by floor space." },
+    { id: "bloc", tab: "Independents pooled", unit: "of nearby est. sales",
+      note: "Estimated sales again, but every independent store is pooled into one company that competes with the chains." },
+    { id: "flips", tab: "What flips", unit: "",
+      note: "Hexes where the leader by store count is different from the leader by estimated sales, coloured by the sales leader. Grey hexes keep the same leader." },
+  ];
+  const $ = (id) => document.getElementById(id);
+  const svg = $("map"), tip = $("tip"), mapbox = $("mapbox");
+  let D = null, view = "names", focus = null, pinned = -1, paths = [];
+
+  function shadeAlpha(share) {
+    const t = Math.max(0, Math.min(1, (share - 20) / 40));
+    return 0.28 + 0.72 * t;
+  }
+  function nameOf(i) { return i < 0 ? "—" : D.names[i]; }
+  function colorOf(v, i) {
+    if (i < 0) return "var(--dim)";
+    const c = D.views[v].colors[i];
+    if (c) return c;
+    return D.names[i] === "Independent" ? D.independent : D.other;
+  }
+  function bucketLabel(v, i) {
+    if (i < 0) return null;
+    if (D.views[v].colors[i]) return D.names[i];
+    return D.names[i] === "Independent" ? "Independent" : (v === "names" ? "Other names" : "Other chains");
+  }
+
+  function fillFor(hi) {
+    const shade = $("shade").checked;
+    if (view === "flips") {
+      const a = D.views.count.winner[hi], b = D.views.revenue.winner[hi];
+      if (a === b || b < 0) return { fill: "var(--dim)", a: 1, key: null };
+      const lab = bucketLabel("revenue", b);
+      if (focus && lab !== focus) return { fill: "var(--dim)", a: 1, key: lab };
+      return { fill: colorOf("revenue", b), a: 1, key: lab };
+    }
+    const V = D.views[view], w = V.winner[hi];
+    if (w < 0) return { fill: "var(--dim)", a: 1, key: null };
+    const lab = bucketLabel(view, w);
+    if (focus && lab !== focus) return { fill: "var(--dim)", a: 1, key: lab };
+    return { fill: colorOf(view, w), a: shade ? shadeAlpha(V.share[hi]) : 1, key: lab };
+  }
+
+  function paint() {
+    for (let i = 0; i < paths.length; i++) {
+      const f = fillFor(i);
+      paths[i].style.fill = f.fill;
+      paths[i].style.fillOpacity = f.a;
+    }
+    renderLegend();
+  }
+
+  function renderLegend() {
+    const counts = new Map(), colors = new Map();
+    const v = view === "flips" ? "revenue" : view;
+    for (let i = 0; i < D.hexes; i++) {
+      let w;
+      if (view === "flips") {
+        const a = D.views.count.winner[i]; w = D.views.revenue.winner[i];
+        if (a === w || w < 0) continue;
+      } else { w = D.views[view].winner[i]; if (w < 0) continue; }
+      const lab = bucketLabel(v, w);
+      counts.set(lab, (counts.get(lab) || 0) + 1);
+      if (!colors.has(lab)) colors.set(lab, colorOf(v, w));
+    }
+    const tail = ["Other names", "Other chains", "Independent"];
+    const items = [...counts.entries()].sort((a, b) => (tail.includes(a[0]) - tail.includes(b[0])) || b[1] - a[1]);
+    const total = items.reduce((s, x) => s + x[1], 0);
+    $("legend-title").textContent = view === "flips" ? "Hexes gained" : "Hexes won";
+    $("legend-total").textContent = view === "flips" ? `${total.toLocaleString()} of ${D.hexes.toLocaleString()} flip` : `${total.toLocaleString()} hexes`;
+    const ul = $("legend");
+    ul.replaceChildren(...items.map(([lab, n]) => {
+      const li = document.createElement("li");
+      const b = document.createElement("button");
+      b.type = "button"; b.setAttribute("aria-pressed", String(focus === lab));
+      b.innerHTML = `<span class="sw"></span><span class="nm"></span><span class="ct"></span>`;
+      b.children[0].style.background = colors.get(lab);
+      b.children[1].textContent = lab; b.children[1].title = lab;
+      b.children[2].textContent = n.toLocaleString();
+      b.addEventListener("click", () => { focus = focus === lab ? null : lab; $("clear").hidden = !focus; paint(); });
+      li.appendChild(b); return li;
+    }));
+    $("clear").hidden = !focus;
+  }
+
+  function row(sw, name, pct, lead) {
+    return `<div class="row${lead ? " lead" : ""}"><span class="sw" style="background:${sw}"></span>` +
+      `<span class="nm">${esc(name)}</span><span class="pc">${pct}%</span>` +
+      `<span class="bar"><i style="width:${Math.min(100, pct)}%;background:${sw}"></i></span></div>`;
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+  function tipHTML(hi) {
+    const st = D.state[hi] >= 0 ? D.stateCodes[D.state[hi]] : "";
+    if (view === "flips") {
+      const c = D.views.count, r = D.views.revenue;
+      const a = c.winner[hi], b = r.winner[hi];
+      const same = a === b;
+      return `<div class="where">${st} hex · ${same ? "no change" : "leader changes"}</div><div class="rows">` +
+        `<div class="row"><span class="sw" style="background:${colorOf("count", a)}"></span><span class="nm">Most stores: ${esc(nameOf(a))}</span><span class="pc">${c.share[hi]}%</span></div>` +
+        `<div class="row lead"><span class="sw" style="background:${colorOf("revenue", b)}"></span><span class="nm">Most sales: ${esc(nameOf(b))}</span><span class="pc">${r.share[hi]}%</span></div>` +
+        `</div><div class="foot">${c.n[hi].toLocaleString()} grocery stores in this hex.</div>`;
+    }
+    const V = D.views[view], meta = VIEWS.find((x) => x.id === view);
+    const w = V.winner[hi];
+    let html = `<div class="where">${st} hex · ${V.n[hi].toLocaleString()} stores in it</div><div class="rows">`;
+    const t = V.top[hi];
+    const ownWin = w >= 0 && D.names[w] === "Independent" && view !== "bloc";
+    if (ownWin) html += row(D.independent, "A single independent store", V.share[hi], true);
+    for (let k = 0; k < t.length; k += 2) {
+      html += row(colorOf(view, t[k]), D.names[t[k]], t[k + 1], !ownWin && t[k] === w);
+    }
+    html += `</div>`;
+    const foot = [];
+    if (V.indep) foot.push(`All independents combined: ${V.indep[hi]}% ${meta.unit}`);
+    foot.push(`% = share of ${meta.unit.replace("of nearby ", "")} in this hex and its 6 neighbours.`);
+    html += `<div class="foot">${foot.join("<br>")}</div>`;
+    return html;
+  }
+
+  function showTip(hi, x, y) {
+    tip.innerHTML = tipHTML(hi);
+    tip.hidden = false;
+    const box = mapbox.getBoundingClientRect();
+    const tw = tip.offsetWidth, th = tip.offsetHeight;
+    let left = x - box.left + 16, top = y - box.top + 16;
+    if (left + tw > box.width - 6) left = x - box.left - tw - 16;
+    if (left < 6) left = 6;
+    if (top + th > box.height - 6) top = Math.max(6, y - box.top - th - 16);
+    tip.style.left = left + "px"; tip.style.top = top + "px";
+  }
+  let hot = null;
+  function setHot(p) {
+    if (hot === p) return;
+    if (hot) hot.classList.remove("hot");
+    hot = p;
+    if (p) { p.classList.add("hot"); p.parentNode.appendChild(p); }
+  }
+
+  function setView(v, fromHash) {
+    if (!VIEWS.some((x) => x.id === v)) v = "names";
+    view = v; focus = null; pinned = -1; tip.hidden = true; setHot(null);
+    for (const b of $("tabs").children) b.setAttribute("aria-selected", String(b.dataset.view === v));
+    $("viewnote").textContent = VIEWS.find((x) => x.id === v).note;
+    $("shade").disabled = v === "flips";
+    if (!fromHash && location.hash !== "#" + v) history.replaceState(null, "", "#" + v);
+    paint();
+  }
+
+  function build() {
+    const [W, H] = D.viewBox;
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+    const NS = "http://www.w3.org/2000/svg";
+    const g = document.createElementNS(NS, "g");
+    for (let i = 0; i < D.hexes; i++) {
+      const c = D.geo[i];
+      let d = "M" + c[0] / 10 + "," + c[1] / 10;
+      for (let k = 2; k < c.length; k += 2) d += "L" + c[k] / 10 + "," + c[k + 1] / 10;
+      const p = document.createElementNS(NS, "path");
+      p.setAttribute("d", d + "Z"); p.setAttribute("class", "h"); p.dataset.i = i;
+      g.appendChild(p); paths.push(p);
+    }
+    svg.appendChild(g);
+    const s = document.createElementNS(NS, "path");
+    s.setAttribute("class", "states"); s.setAttribute("d", D.states.join(""));
+    svg.appendChild(s);
+    $("rel").textContent = D.release;
+
+    svg.addEventListener("pointermove", (e) => {
+      if (e.pointerType === "touch" || pinned >= 0) return;
+      const p = e.target.closest("path.h");
+      if (!p) { tip.hidden = true; setHot(null); return; }
+      setHot(p); showTip(+p.dataset.i, e.clientX, e.clientY);
+    });
+    svg.addEventListener("pointerleave", () => { if (pinned < 0) { tip.hidden = true; setHot(null); } });
+    svg.addEventListener("click", (e) => {
+      const p = e.target.closest("path.h");
+      if (!p) { pinned = -1; tip.hidden = true; setHot(null); return; }
+      pinned = +p.dataset.i; setHot(p); showTip(pinned, e.clientX, e.clientY);
+    });
+
+    for (const v of VIEWS) {
+      const b = document.createElement("button");
+      b.type = "button"; b.role = "tab"; b.dataset.view = v.id; b.textContent = v.tab;
+      b.addEventListener("click", () => setView(v.id));
+      $("tabs").appendChild(b);
+    }
+    $("shade").addEventListener("change", paint);
+    $("clear").addEventListener("click", () => { focus = null; paint(); });
+    addEventListener("hashchange", () => setView(location.hash.slice(1), true));
+    $("status").hidden = true;
+    setView(location.hash.slice(1), true);
+  }
+
+  fetch("data.json").then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then((d) => { D = d; build(); })
+    .catch((err) => { $("status").textContent = "The map data didn't load (" + err.message + "). Reload the page to try again."; });
+})();
+</script>

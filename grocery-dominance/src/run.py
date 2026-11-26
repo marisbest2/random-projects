@@ -80,7 +80,8 @@ def replication(pl: pd.DataFrame, states, rel: str):
         f"Most common grocery store name/brand in each hex and its 6 neighbours · {len(df):,} stores · {len(w):,} hexes "
         f"· top {REPLICATION_COLOURS} names cover {named:.0%} of the map",
         "01_replication_store_name_count.png", rel, legend_cols=3, other_label="Other names")
-    return w, p
+    df["label"] = df["key"].map(label)
+    return w, p, pal, df
 
 
 def build_store_table(pl: pd.DataFrame) -> pd.DataFrame:
@@ -115,7 +116,7 @@ def main():
     states = data.states()
     print(f"[places] {len(pl):,} candidate places ({pl.strict.sum():,} in grocery categories)")
 
-    rep_w, _ = replication(pl, states, rel)
+    rep_w, *_ = replication(pl, states, rel)
 
     st = build_store_table(pl)
 

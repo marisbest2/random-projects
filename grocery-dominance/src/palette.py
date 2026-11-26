@@ -29,7 +29,7 @@ def _extended_candidates(min_sep: float = 9.0) -> list[str]:
     from matplotlib.colors import to_hex
 
     grid = [to_hex(colorsys.hls_to_rgb(h / 360, l, sat))
-            for l, sat in ((0.45, 0.75), (0.32, 0.65), (0.62, 0.70), (0.25, 0.55))
+            for l, sat in ((0.45, 0.58), (0.32, 0.55), (0.62, 0.55), (0.25, 0.45))
             for h in range(0, 360, 12)]
     out: list[str] = []
     for c in CANDIDATES + grid:
@@ -51,22 +51,27 @@ def _dist(a: str, b: str) -> float:
     return float(np.linalg.norm(_lab(a) - _lab(b)))
 
 
-def winner_adjacency(w: pd.DataFrame) -> dict[str, set]:
-    """Which winners share a hex edge with which other winners."""
-    owner = dict(zip(w["hex"], w["winner"]))
-    adj: dict[str, set] = {k: set() for k in w["winner"].unique()}
-    for h, k in owner.items():
-        for n in h3.grid_ring(h, 1):
-            o = owner.get(n)
-            if o is not None and o != k:
-                adj[k].add(o)
+def winner_adjacency(ws) -> dict[str, set]:
+    """Which winners share a hex edge with which other winners (union over one or more maps)."""
+    ws = ws if isinstance(ws, (list, tuple)) else [ws]
+    adj: dict[str, set] = {}
+    for w in ws:
+        owner = dict(zip(w["hex"], w["winner"]))
+        for h, k in owner.items():
+            adj.setdefault(k, set())
+            for n in h3.grid_ring(h, 1):
+                o = owner.get(n)
+                if o is not None and o != k:
+                    adj[k].add(o)
     return adj
 
 
-def adjacency_palette(w: pd.DataFrame, n: int, brand: dict[str, str], reserved: dict[str, str],
+def adjacency_palette(w, n: int, brand: dict[str, str], reserved: dict[str, str],
                       min_dist: float = 28.0) -> dict[str, str]:
-    """Colour the top-n winners (by hexes won). `reserved` (Independent/Other) is never reused."""
-    ranked = [k for k in w["winner"].value_counts().index if k not in reserved][:n]
+    """Colour the top-n winners (by hexes won, summed over maps if several). `reserved` is never reused."""
+    ws = w if isinstance(w, (list, tuple)) else [w]
+    tally = pd.concat([x["winner"] for x in ws]).value_counts()
+    ranked = [k for k in tally.index if k not in reserved][:n]
     adj = winner_adjacency(w)
     pal: dict[str, str] = {}
     used: set[str] = set(reserved.values())
